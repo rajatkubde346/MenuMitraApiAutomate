@@ -30,10 +30,10 @@ public class APIBase
 	public static Properties property;
 
 	// Path to the properties configuration file
-	private static String propertyFilePath = "src/test/resources/configFile/config.properties";
+	private static String propertyFilePath = "src\\test\\resources\\configFile\\config.properties";
 
 	// Excel file path and sheet name for test data
-	public static String excelSheetPathForGetApis = "src/test/resources/excelsheet/apiEndpoint.xlsx";
+	public static String excelSheetPathForGetApis = "src\\test\\resources\\excelsheet\\apiEndpoint.xlsx";
 	public static String appsheetName = "userapp";
 
 	// FileInputStream object for reading the properties file

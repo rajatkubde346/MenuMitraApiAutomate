@@ -186,7 +186,7 @@ public class MakeMenuSpecialNonSpecial extends APIBase
             {
                 requestBodyJson = new JSONObject(requestBody);
 
-                menuRequest.setOutlet_id(requestBodyJson.getString("outlet_id"));
+                menuRequest.setOutlet_id(Integer.parseInt(requestBodyJson.getString("outlet_id")));
                 menuRequest.setMenu_id(requestBodyJson.getString("menu_id"));
                 menuRequest.setUser_id(String.valueOf(userId));
                 
@@ -250,13 +250,35 @@ public class MakeMenuSpecialNonSpecial extends APIBase
         }
     }
     
-    
+    /**
+     * Counts the number of sentences in a text string
+     * @param text The text to count sentences in
+     * @return The number of sentences
+     */
+    private int countSentences(String text) {
+        if (text == null || text.isEmpty()) {
+            return 0;
+        }
+        
+        // Basic sentence counting - splitting by common sentence terminators
+        // This is a simple implementation and may need to be refined for complex texts
+        String[] sentences = text.split("[.!?]+");
+        
+        // Filter out empty strings that might result from consecutive terminators
+        int count = 0;
+        for (String sentence : sentences) {
+            if (sentence.trim().length() > 0) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
     
     @DataProvider(name = "getMakeMenuSpecialNonSpecialNegativeData")
     public Object[][] getMakeMenuSpecialNonSpecialNegativeData() throws customException {
         try {
             LogUtils.info("Reading Make Menu Special/Non-Special negative test scenario data");
-            //ExtentReport.getTest().log(Status.INFO, "Reading Make Menu Special/Non-Special negative test scenario data");
             
             Object[][] readExcelData = DataDriven.readExcelData(excelSheetPathForGetApis, "CommonAPITestScenario");
             if (readExcelData == null) {
@@ -298,31 +320,6 @@ public class MakeMenuSpecialNonSpecial extends APIBase
         }
     }
     
-    /**
-     * Counts the number of sentences in a text string
-     * @param text The text to count sentences in
-     * @return The number of sentences
-     */
-    private int countSentences(String text) {
-        if (text == null || text.isEmpty()) {
-            return 0;
-        }
-        
-        // Basic sentence counting - splitting by common sentence terminators
-        // This is a simple implementation and may need to be refined for complex texts
-        String[] sentences = text.split("[.!?]+");
-        
-        // Filter out empty strings that might result from consecutive terminators
-        int count = 0;
-        for (String sentence : sentences) {
-            if (sentence.trim().length() > 0) {
-                count++;
-            }
-        }
-        
-        return count;
-    }
-    
     @Test(dataProvider = "getMakeMenuSpecialNonSpecialNegativeData")
     public void makeMenuSpecialNonSpecialNegativeTest(String apiName, String testCaseid, String testType, String description,
             String httpsmethod, String requestBody, String expectedResponseBody, String statusCode) throws customException {
@@ -352,7 +349,7 @@ public class MakeMenuSpecialNonSpecial extends APIBase
             ExtentReport.getTest().log(Status.INFO, "Request Body: " + requestBodyJson.toString());
             
             // Set request parameters from JSON
-            menuRequest.setOutlet_id(requestBodyJson.getString("outlet_id"));
+            menuRequest.setOutlet_id(Integer.parseInt(requestBodyJson.getString("outlet_id")));
             menuRequest.setMenu_id(requestBodyJson.getString("menu_id"));
             menuRequest.setUser_id(String.valueOf(userId));
             
@@ -391,7 +388,7 @@ public class MakeMenuSpecialNonSpecial extends APIBase
                 ExtentReport.getTest().log(Status.INFO, "Actual Response Body: " + actualJsonBody.toString(2));
                 
                 if (expectedResponseBody != null && !expectedResponseBody.isEmpty()) {
-                	expectedJsonBody = new JSONObject(expectedResponseBody);
+                    expectedJsonBody = new JSONObject(expectedResponseBody);
                     ExtentReport.getTest().log(Status.INFO, "Expected Response Body: " + expectedJsonBody.toString(2));
                     
                     // Validate response message sentence count

@@ -98,7 +98,6 @@ public class InventoryCategoryListView extends APIBase
                 if (row != null && row.length >= 3 &&
                         "inventorycategorylistview".equalsIgnoreCase(Objects.toString(row[0], "")) &&
                         "positive".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-
                     filteredData.add(row);
                 }
             }

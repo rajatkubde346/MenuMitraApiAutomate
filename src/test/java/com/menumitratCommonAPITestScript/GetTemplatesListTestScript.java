@@ -153,13 +153,13 @@ public class GetTemplatesListTestScript extends APIBase
                 if (row != null && row.length >= 3 &&
                         "gettemplateslist".equalsIgnoreCase(Objects.toString(row[0], "")) &&
                         "positive".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-
+                    // Only add positive test cases
                     filteredData.add(row);
                 }
             }
 
             if (filteredData.isEmpty()) {
-                String errorMsg = "No valid templates list test data found after filtering";
+                String errorMsg = "No valid positive templates list test data found after filtering";
                 LogUtils.failure(logger, errorMsg);
                 ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
                 throw new customException(errorMsg);
@@ -170,8 +170,8 @@ public class GetTemplatesListTestScript extends APIBase
                 obj[i] = filteredData.get(i);
             }
 
-            LogUtils.info("Successfully retrieved " + obj.length + " templates list test scenarios");
-            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " templates list test scenarios");
+            LogUtils.info("Successfully retrieved " + obj.length + " positive templates list test scenarios");
+            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " positive templates list test scenarios");
             return obj;
         } catch (Exception e) {
             String errorMsg = "Error in getTemplatesListData: " + e.getMessage();

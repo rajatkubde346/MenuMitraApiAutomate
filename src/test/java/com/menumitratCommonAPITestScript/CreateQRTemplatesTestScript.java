@@ -156,59 +156,56 @@ public class CreateQRTemplatesTestScript extends APIBase
             ExtentReport.getTest().log(Status.INFO, "Starting create QR templates test: " + description);
             ExtentReport.getTest().log(Status.INFO, "Base URI: " + baseUri);
 
-            if (apiName.equalsIgnoreCase("createqrtemplates") && testType.equalsIgnoreCase("positive")) {
-                LogUtils.info("Processing create QR templates request");
-                requestBodyJson = new JSONObject(requestBody.replace("\\", "\\\\"));
-                
-                System.out.println("Access Token: " + accessToken);
-                
-                request = RestAssured.given();
-                request.header("Authorization", "Bearer " + accessToken);
-                request.header("Content-Type", "multipart/form-data");
+            LogUtils.info("Processing create QR templates request");
+            requestBodyJson = new JSONObject(requestBody.replace("\\", "\\\\"));
+            
+            System.out.println("Access Token: " + accessToken);
+            
+            request = RestAssured.given();
+            request.header("Authorization", "Bearer " + accessToken);
+            request.header("Content-Type", "multipart/form-data");
 
-                // Set multipart form data
-                
-                request.multiPart("name", requestBodyJson.getString("name"));
-                request.multiPart("qr_overlay_position", requestBodyJson.getString("qr_overlay_position"));
-                
-                if (requestBodyJson.has("image") && !requestBodyJson.getString("image").isEmpty())
+            // Set multipart form data
+            
+            request.multiPart("name", requestBodyJson.getString("name"));
+            request.multiPart("qr_overlay_position", requestBodyJson.getString("qr_overlay_position"));
+            
+            if (requestBodyJson.has("image") && !requestBodyJson.getString("image").isEmpty())
+            {
+                File templateImage = new File(requestBodyJson.getString("image"));
+                if(templateImage.exists())
                 {
-                    File templateImage = new File(requestBodyJson.getString("image"));
-                    if(templateImage.exists())
-                    {
-                        request.multiPart("image", templateImage);
-                    }
-                }
-                
-                LogUtils.info("Constructing request body");
-                ExtentReport.getTest().log(Status.INFO, "Constructing request body");
-                LogUtils.info("Sending POST request to endpoint: " + baseUri);
-                ExtentReport.getTest().log(Status.INFO, "Sending POST request to create QR template");
-                
-                response = request.when().post(baseUri).then().extract().response();
-
-                LogUtils.info("Received response with status code: " + response.getStatusCode());
-                ExtentReport.getTest().log(Status.INFO, "Received response with status code: " + response.getStatusCode());
-                LogUtils.info("Response body: " + response.asPrettyString());
-                ExtentReport.getTest().log(Status.INFO, "Response body: " + response.asPrettyString());
-                
-                if (response.getStatusCode() == 200) 
-                {
-                    LogUtils.success(logger, "QR template created successfully");
-                    ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("QR template created successfully", ExtentColor.GREEN));
-                    LogUtils.info("Response received successfully");
-                    ExtentReport.getTest().log(Status.PASS, "Response received successfully");
-                    ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asPrettyString());
-                } 
-                else 
-                {
-                    LogUtils.failure(logger, "QR template creation failed with status code: " + response.getStatusCode());
-                    LogUtils.error("Response body: " + response.asPrettyString());
-                    ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("QR template creation failed", ExtentColor.RED));
-                    ExtentReport.getTest().log(Status.FAIL, "Response Body: " + response.asPrettyString());
+                    request.multiPart("image", templateImage);
                 }
             }
+            
+            LogUtils.info("Constructing request body");
+            ExtentReport.getTest().log(Status.INFO, "Constructing request body");
+            LogUtils.info("Sending POST request to endpoint: " + baseUri);
+            ExtentReport.getTest().log(Status.INFO, "Sending POST request to create QR template");
+            
+            response = request.when().post(baseUri).then().extract().response();
 
+            LogUtils.info("Received response with status code: " + response.getStatusCode());
+            ExtentReport.getTest().log(Status.INFO, "Received response with status code: " + response.getStatusCode());
+            LogUtils.info("Response body: " + response.asPrettyString());
+            ExtentReport.getTest().log(Status.INFO, "Response body: " + response.asPrettyString());
+            
+            if (response.getStatusCode() == 200) 
+            {
+                LogUtils.success(logger, "QR template created successfully");
+                ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("QR template created successfully", ExtentColor.GREEN));
+                LogUtils.info("Response received successfully");
+                ExtentReport.getTest().log(Status.PASS, "Response received successfully");
+                ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asPrettyString());
+            } 
+            else 
+            {
+                LogUtils.failure(logger, "QR template creation failed with status code: " + response.getStatusCode());
+                LogUtils.error("Response body: " + response.asPrettyString());
+                ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("QR template creation failed", ExtentColor.RED));
+                ExtentReport.getTest().log(Status.FAIL, "Response Body: " + response.asPrettyString());
+            }
         } catch (Exception e) {
             LogUtils.error("Error during create QR templates test execution: " + e.getMessage());
             ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Test execution failed", ExtentColor.RED));

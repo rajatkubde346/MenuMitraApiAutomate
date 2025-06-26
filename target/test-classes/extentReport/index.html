@@ -55,7 +55,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Wednesday, May 28, 2025, 06:15 AM (IST)</span>
+                    <span class="badge badge-primary">Thursday, June 26, 2025, 03:00 PM (IST)</span>
                 </a>
             </li>
         </ul>
@@ -100,10 +100,10 @@
                                             <i class="fa fa-exclamation-circle"></i>
                                         </a>
                                         <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-                                            
+                                            <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
 	                                        
 	                                        
-	                                        <a class="dropdown-item" status="error" href="#"><span>Error</span><span class="status warning pull-right"></span></a>
+	                                        
 	                                        
 	                                        
 	                                        <div class="dropdown-divider"></div>
@@ -114,28 +114,28 @@
                             </div>
                             <div class="test-list-wrapper scrollable">
                                 <ul class="test-list-item">
-                                    <li class="test-item"  status="error" test-id="1"
+                                    <li class="test-item"  status="pass" test-id="1"
                                             author=""
                                             tag=""
                                             device="">
-                                        <div class="status-avatar error-bg">
-                                            <i class="fa fa-exclamation text-white"></i>
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
                                         </div>
                                         <div class="open-test">
                                             <div class="test-detail"> 
-                                                <p class="name">Udhari Ledger Test Setup</p> 
-                                                <p class="duration text-sm">0h 0m 1s+94ms</p> 
-                                                <span class="datetime">06:15:44 AM</span>
+                                                <p class="name">Booking Create SetUp</p> 
+                                                <p class="duration text-sm">0h 0m 5s+948ms</p> 
+                                                <span class="datetime">15:00:04 PM</span>
                                             </div>
                                         </div>
                                         <div class="test-contents d-none">
                                             <div class="detail-head">
                                                 <div class="p-v-10 d-inline-block"> 
                                                     <div class="info">
-                                                        <h5 class="test-status text-error">Udhari Ledger Test Setup</h5>
-                                                        <span class='badge badge-success'>05.28.2025 06:15:44</span>
-                                                        <span class='badge badge-danger'>05.28.2025 06:15:45</span>
-                                                        <span class='badge badge-default'>0h 0m 1s+94ms</span>
+                                                        <h5 class="test-status text-pass">Booking Create SetUp</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:04</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:10</span>
+                                                        <span class='badge badge-default'>0h 0m 5s+948ms</span>
                                                     </div>
                                                     <div class="m-t-10 m-l-5">
                                                         
@@ -152,16 +152,1214 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-info text-info"></i></td>
-				<td>6:15:45 AM</td>
+				<td>3:00:04 PM</td>
 				<td>
-						Base URI set to: https://men4u.xyzpost
+						Booking Create SetUp
 				</td>
 			</tr>
 			<tr class="event-row">
-				<td><i class="fa fa-exclamation text-error"></i></td>
-				<td>6:15:45 AM</td>
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:04 PM</td>
 				<td>
-						Failed to set up Udhari Ledger test: Cannot invoke "java.util.Properties.getProperty(String)" because "this.property" is null
+						===== Starting Login API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:04 PM</td>
+				<td>
+						Constructed Login Base URI: https://men4u.xyz/v2/common/login
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:04 PM</td>
+				<td>
+						Login payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:08 PM</td>
+				<td>
+						POST request executed for login API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:08 PM</td>
+				<td>
+						Login API executed successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:08 PM</td>
+				<td>
+						===== Starting VerifyOTP API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:08 PM</td>
+				<td>
+						Constructed Verify OTP Base URI: https://men4u.xyz/v2/common/verify_otp
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:08 PM</td>
+				<td>
+						Verify OTP payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:09 PM</td>
+				<td>
+						POST request executed for Verify OTP API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:09 PM</td>
+				<td>
+						verify OTP API responded with status code 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:09 PM</td>
+				<td>
+						Reading Booking Create API endpoint data
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Constructed base URI: https://men4u.xyz/v2/common/create_booking
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Reading booking create test scenario data
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="2"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Booking Create Test - bookingcreate_001</p> 
+                                                <p class="duration text-sm">0h 0m 0s+219ms</p> 
+                                                <span class="datetime">15:00:10 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Booking Create Test - bookingcreate_001</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:10</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:10</span>
+                                                        <span class='badge badge-default'>0h 0m 0s+219ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Test Description: Verify
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Request Body: {"app_source":"pos_app","outlet_id":1,"payment_details":{"advance_amount":100,"payment_method":"advance_payment"},"user_id":2,"menu_items":[{"quantity":2,"special_note":"Extra spicy","price":250,"portion_name":"Half","menu_id":56}],"booking_details":{"customer_mobile":"9876543210","expected_datetime":"2025-06-10 14:30:00","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","customer_name":"John Doe","delivery_datetime":"2025-06-10 14:00:00"}}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Response Status Code: 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Response Body: {"detail":"Booking created successfully","data":{"booking_id":103,"order_id":5246,"order_number":"2247","total_amount":204.02,"advance_paid":100.0,"pending_amount":104.02}}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Booking create response received successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Response: {
+    "detail": "Booking created successfully",
+    "data": {
+        "booking_id": 103,
+        "order_id": 5246,
+        "order_number": "2247",
+        "total_amount": 204.02,
+        "advance_paid": 100.0,
+        "pending_amount": 104.02
+    }
+}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						<span class='badge white-text green'>Booking create test completed successfully</span>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						<span class='badge white-text green'>bookingCreateTest - Test Case PASSED</span>
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="3"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Booking List View SetUp</p> 
+                                                <p class="duration text-sm">0h 0m 0s+409ms</p> 
+                                                <span class="datetime">15:00:10 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Booking List View SetUp</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:10</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:11</span>
+                                                        <span class='badge badge-default'>0h 0m 0s+409ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Booking List View SetUp
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						===== Starting Login API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Constructed Login Base URI: https://men4u.xyz/v2/common/login
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:10 PM</td>
+				<td>
+						Login payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						POST request executed for login API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Login API executed successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						===== Starting VerifyOTP API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Constructed Verify OTP Base URI: https://men4u.xyz/v2/common/verify_otp
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Verify OTP payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						POST request executed for Verify OTP API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						verify OTP API responded with status code 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Reading Booking List View API endpoint data
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Constructed base URI: https://men4u.xyz/v2/common/listview_bookings
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Reading booking list view test scenario data
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="4"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Booking List View Test - bookinglistview_001</p> 
+                                                <p class="duration text-sm">0h 0m 0s+238ms</p> 
+                                                <span class="datetime">15:00:11 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Booking List View Test - bookinglistview_001</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:11</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:11</span>
+                                                        <span class='badge badge-default'>0h 0m 0s+238ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Test Description: Verify
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Request Body: {"end_date":"15 Jun 2025","app_source":"owner_app","outlet_id":1,"start_date":"02 Jun 2025"}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Response Status Code: 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Response Body: {"detail":"Bookings retrieved successfully","data":{"total":19,"bookings":[{"booking_id":7,"order_id":1357,"order_number":"1042","delivery_datetime":"12 Jun 2025 08:34:00 AM","booking_datetime":"05 Jun 2025 13:13:01 PM","customer_name":"Bxjdjdj","customer_mobile":"9565686566","total_bill_amount":102.01,"advance_paid_amount":0.0,"pending_bill_amount":102.01,"booking_status":"cancelled","special_message":"Bchjd","comment":"Dhhfjfjf","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":100.0,"portion_name":"Half","special_note":""}],"expected_datetime":"18 Jun 2025 10:34:00 AM"},{"booking_id":1,"order_id":1316,"order_number":"1001","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"04 Jun 2025 15:09:34 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":204.02,"pending_bill_amount":0.0,"booking_status":"settled","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":11,"menu_name":"Lemon Ricee","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":103,"order_id":5246,"order_number":"2247","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"26 Jun 2025 15:00:11 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":56,"menu_name":"Chicken tandoor","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":102,"order_id":5245,"order_number":"2246","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"26 Jun 2025 14:01:34 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":56,"menu_name":"Chicken tandoor","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":101,"order_id":5244,"order_number":"2245","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"26 Jun 2025 12:23:40 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":56,"menu_name":"Chicken tandoor","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":100,"order_id":5243,"order_number":"2244","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"26 Jun 2025 12:10:42 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":56,"menu_name":"Chicken tandoor","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":99,"order_id":5242,"order_number":"2243","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"26 Jun 2025 12:10:00 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":11,"menu_name":"Lemon Ricee","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":73,"order_id":5112,"order_number":"2233","delivery_datetime":"10 Jun 2025 14:00:00 PM","booking_datetime":"23 Jun 2025 16:36:34 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":102.01,"advance_paid_amount":100.0,"pending_bill_amount":2.01,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":13,"menu_name":"Jeera Rice","quantity":1,"price":100.0,"portion_name":"Half","special_note":"No onions"}],"expected_datetime":"10 Jun 2025 14:30:00 PM"},{"booking_id":2,"order_id":1319,"order_number":"1004","delivery_datetime":"09 Jun 2025 21:30:00 PM","booking_datetime":"04 Jun 2025 15:24:15 PM","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":1020.1,"advance_paid_amount":100.0,"pending_bill_amount":920.1,"booking_status":"pending","special_message":"Birthday celebration","comment":"Please arrange cake and decorations","menu_items":[{"menu_id":11,"menu_name":"Lemon Ricee","quantity":10,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"expected_datetime":"04 Jun 2025 04:24:00 AM"},{"booking_id":13,"order_id":1414,"order_number":"1001","delivery_datetime":"05 Jun 2025 11:48:00 AM","booking_datetime":"05 Jun 2025 17:20:11 PM","customer_name":"Bxnxnxn","customer_mobile":"8695956595","total_bill_amount":51.0,"advance_paid_amount":20.0,"pending_bill_amount":31.0,"booking_status":"pending","special_message":"Hfhfjff","comment":"Hfhfjfjf","menu_items":[{"menu_id":51,"menu_name":"testing menu","quantity":1,"price":50.0,"portion_name":"half","special_note":""}],"expected_datetime":"05 Jun 2025 11:48:00 AM"},{"booking_id":4,"order_id":1350,"order_number":"1035","delivery_datetime":"05 Jun 2025 10:00:00 AM","booking_datetime":"05 Jun 2025 12:30:50 PM","customer_name":"Testing again","customer_mobile":"8549595995","total_bill_amount":336.63,"advance_paid_amount":336.63,"pending_bill_amount":0.0,"booking_status":"settled","special_message":"Nxjdjxh","comment":"Vdhdjdj","menu_items":[{"menu_id":51,"menu_name":"testing menu","quantity":3,"price":50.0,"portion_name":"half","special_note":""},{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":180.0,"portion_name":"Full","special_note":""}],"expected_datetime":"06 Jun 2025 09:00:00 AM"},{"booking_id":3,"order_id":1349,"order_number":"1034","delivery_datetime":"05 Jun 2025 09:53:00 AM","booking_datetime":"05 Jun 2025 12:27:45 PM","customer_name":"Test it","customer_mobile":"9565656565","total_bill_amount":51.0,"advance_paid_amount":49.98,"pending_bill_amount":1.02,"booking_status":"pending","special_message":"Name on cake nothing","comment":"Less sweet ","menu_items":[{"menu_id":51,"menu_name":"testing menu","quantity":1,"price":50.0,"portion_name":"half","special_note":""}],"expected_datetime":"07 Jun 2025 16:47:00 PM"},{"booking_id":12,"order_id":1385,"order_number":"1002","delivery_datetime":"05 Jun 2025 09:37:00 AM","booking_datetime":"05 Jun 2025 15:08:07 PM","customer_name":"Create booking","customer_mobile":"9686565665","total_bill_amount":102.01,"advance_paid_amount":31.21,"pending_bill_amount":70.8,"booking_status":"pending","special_message":"Bdjdj","comment":"Jdjfjf","menu_items":[{"menu_id":55,"menu_name":"Chicken tandoor","quantity":1,"price":100.0,"portion_name":"Half","special_note":""}],"expected_datetime":"05 Jun 2025 10:00:00 AM"},{"booking_id":11,"order_id":1384,"order_number":"1001","delivery_datetime":"05 Jun 2025 09:34:00 AM","booking_datetime":"05 Jun 2025 15:05:11 PM","customer_name":"Bakskxjx","customer_mobile":"6898989865","total_bill_amount":102.01,"advance_paid_amount":50.0,"pending_bill_amount":52.01,"booking_status":"pending","special_message":"","comment":"","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":100.0,"portion_name":"Half","special_note":""}],"expected_datetime":"05 Jun 2025 10:00:00 AM"},{"booking_id":10,"order_id":1381,"order_number":"1066","delivery_datetime":"05 Jun 2025 09:28:00 AM","booking_datetime":"05 Jun 2025 14:59:26 PM","customer_name":"Cbjdjd","customer_mobile":"6565656566","total_bill_amount":183.62,"advance_paid_amount":0.0,"pending_bill_amount":183.62,"booking_status":"pending","special_message":"","comment":"","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":180.0,"portion_name":"Full","special_note":""}],"expected_datetime":"05 Jun 2025 09:45:00 AM"},{"booking_id":9,"order_id":1380,"order_number":"1065","delivery_datetime":"05 Jun 2025 09:25:00 AM","booking_datetime":"05 Jun 2025 14:56:21 PM","customer_name":"Xbndjd","customer_mobile":"6898956868","total_bill_amount":183.62,"advance_paid_amount":0.0,"pending_bill_amount":183.62,"booking_status":"pending","special_message":"Hdhd","comment":"Bfjfjjf","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":180.0,"portion_name":"Full","special_note":""}],"expected_datetime":"05 Jun 2025 09:30:00 AM"},{"booking_id":8,"order_id":1358,"order_number":"1043","delivery_datetime":"05 Jun 2025 07:43:00 AM","booking_datetime":"05 Jun 2025 13:15:29 PM","customer_name":"Bdbbd","customer_mobile":"7879898698","total_bill_amount":183.62,"advance_paid_amount":0.0,"pending_bill_amount":183.62,"booking_status":"cancelled","special_message":"Bxhx","comment":"Hchf","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":180.0,"portion_name":"Full","special_note":""}],"expected_datetime":"05 Jun 2025 07:43:00 AM"},{"booking_id":6,"order_id":1354,"order_number":"1039","delivery_datetime":"05 Jun 2025 07:30:00 AM","booking_datetime":"05 Jun 2025 13:01:53 PM","customer_name":"Hdjfjf","customer_mobile":"9565656566","total_bill_amount":102.01,"advance_paid_amount":102.01,"pending_bill_amount":0.0,"booking_status":"pending","special_message":"Bcncjf","comment":"Hffjfjfjf","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":1,"price":100.0,"portion_name":"Half","special_note":""}],"expected_datetime":"06 Jun 2025 11:30:00 AM"},{"booking_id":14,"order_id":1420,"order_number":"1002","delivery_datetime":"05 Jun 2025 07:05:00 AM","booking_datetime":"05 Jun 2025 18:06:05 PM","customer_name":"Notifications ","customer_mobile":"9868686989","total_bill_amount":204.02,"advance_paid_amount":50.0,"pending_bill_amount":154.02,"booking_status":"pending","special_message":"Bcbcjcn","comment":"Fjjfjjf","menu_items":[{"menu_id":14,"menu_name":"Lemon Ricee","quantity":2,"price":100.0,"portion_name":"Half","special_note":""}],"expected_datetime":"05 Jun 2025 13:21:00 PM"}]}}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Booking list view response received successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Response: {
+    "detail": "Bookings retrieved successfully",
+    "data": {
+        "total": 19,
+        "bookings": [
+            {
+                "booking_id": 7,
+                "order_id": 1357,
+                "order_number": "1042",
+                "delivery_datetime": "12 Jun 2025 08:34:00 AM",
+                "booking_datetime": "05 Jun 2025 13:13:01 PM",
+                "customer_name": "Bxjdjdj",
+                "customer_mobile": "9565686566",
+                "total_bill_amount": 102.01,
+                "advance_paid_amount": 0.0,
+                "pending_bill_amount": 102.01,
+                "booking_status": "cancelled",
+                "special_message": "Bchjd",
+                "comment": "Dhhfjfjf",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "18 Jun 2025 10:34:00 AM"
+            },
+            {
+                "booking_id": 1,
+                "order_id": 1316,
+                "order_number": "1001",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "04 Jun 2025 15:09:34 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 204.02,
+                "pending_bill_amount": 0.0,
+                "booking_status": "settled",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 11,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 103,
+                "order_id": 5246,
+                "order_number": "2247",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "26 Jun 2025 15:00:11 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 104.02,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 56,
+                        "menu_name": "Chicken tandoor",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 102,
+                "order_id": 5245,
+                "order_number": "2246",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "26 Jun 2025 14:01:34 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 104.02,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 56,
+                        "menu_name": "Chicken tandoor",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 101,
+                "order_id": 5244,
+                "order_number": "2245",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "26 Jun 2025 12:23:40 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 104.02,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 56,
+                        "menu_name": "Chicken tandoor",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 100,
+                "order_id": 5243,
+                "order_number": "2244",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "26 Jun 2025 12:10:42 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 104.02,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 56,
+                        "menu_name": "Chicken tandoor",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 99,
+                "order_id": 5242,
+                "order_number": "2243",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "26 Jun 2025 12:10:00 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 104.02,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 11,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 73,
+                "order_id": 5112,
+                "order_number": "2233",
+                "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+                "booking_datetime": "23 Jun 2025 16:36:34 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 102.01,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 2.01,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 13,
+                        "menu_name": "Jeera Rice",
+                        "quantity": 1,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "No onions"
+                    }
+                ],
+                "expected_datetime": "10 Jun 2025 14:30:00 PM"
+            },
+            {
+                "booking_id": 2,
+                "order_id": 1319,
+                "order_number": "1004",
+                "delivery_datetime": "09 Jun 2025 21:30:00 PM",
+                "booking_datetime": "04 Jun 2025 15:24:15 PM",
+                "customer_name": "John Doe",
+                "customer_mobile": "9876543210",
+                "total_bill_amount": 1020.1,
+                "advance_paid_amount": 100.0,
+                "pending_bill_amount": 920.1,
+                "booking_status": "pending",
+                "special_message": "Birthday celebration",
+                "comment": "Please arrange cake and decorations",
+                "menu_items": [
+                    {
+                        "menu_id": 11,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 10,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": "Extra spicy"
+                    }
+                ],
+                "expected_datetime": "04 Jun 2025 04:24:00 AM"
+            },
+            {
+                "booking_id": 13,
+                "order_id": 1414,
+                "order_number": "1001",
+                "delivery_datetime": "05 Jun 2025 11:48:00 AM",
+                "booking_datetime": "05 Jun 2025 17:20:11 PM",
+                "customer_name": "Bxnxnxn",
+                "customer_mobile": "8695956595",
+                "total_bill_amount": 51.0,
+                "advance_paid_amount": 20.0,
+                "pending_bill_amount": 31.0,
+                "booking_status": "pending",
+                "special_message": "Hfhfjff",
+                "comment": "Hfhfjfjf",
+                "menu_items": [
+                    {
+                        "menu_id": 51,
+                        "menu_name": "testing menu",
+                        "quantity": 1,
+                        "price": 50.0,
+                        "portion_name": "half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 11:48:00 AM"
+            },
+            {
+                "booking_id": 4,
+                "order_id": 1350,
+                "order_number": "1035",
+                "delivery_datetime": "05 Jun 2025 10:00:00 AM",
+                "booking_datetime": "05 Jun 2025 12:30:50 PM",
+                "customer_name": "Testing again",
+                "customer_mobile": "8549595995",
+                "total_bill_amount": 336.63,
+                "advance_paid_amount": 336.63,
+                "pending_bill_amount": 0.0,
+                "booking_status": "settled",
+                "special_message": "Nxjdjxh",
+                "comment": "Vdhdjdj",
+                "menu_items": [
+                    {
+                        "menu_id": 51,
+                        "menu_name": "testing menu",
+                        "quantity": 3,
+                        "price": 50.0,
+                        "portion_name": "half",
+                        "special_note": ""
+                    },
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 180.0,
+                        "portion_name": "Full",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "06 Jun 2025 09:00:00 AM"
+            },
+            {
+                "booking_id": 3,
+                "order_id": 1349,
+                "order_number": "1034",
+                "delivery_datetime": "05 Jun 2025 09:53:00 AM",
+                "booking_datetime": "05 Jun 2025 12:27:45 PM",
+                "customer_name": "Test it",
+                "customer_mobile": "9565656565",
+                "total_bill_amount": 51.0,
+                "advance_paid_amount": 49.98,
+                "pending_bill_amount": 1.02,
+                "booking_status": "pending",
+                "special_message": "Name on cake nothing",
+                "comment": "Less sweet ",
+                "menu_items": [
+                    {
+                        "menu_id": 51,
+                        "menu_name": "testing menu",
+                        "quantity": 1,
+                        "price": 50.0,
+                        "portion_name": "half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "07 Jun 2025 16:47:00 PM"
+            },
+            {
+                "booking_id": 12,
+                "order_id": 1385,
+                "order_number": "1002",
+                "delivery_datetime": "05 Jun 2025 09:37:00 AM",
+                "booking_datetime": "05 Jun 2025 15:08:07 PM",
+                "customer_name": "Create booking",
+                "customer_mobile": "9686565665",
+                "total_bill_amount": 102.01,
+                "advance_paid_amount": 31.21,
+                "pending_bill_amount": 70.8,
+                "booking_status": "pending",
+                "special_message": "Bdjdj",
+                "comment": "Jdjfjf",
+                "menu_items": [
+                    {
+                        "menu_id": 55,
+                        "menu_name": "Chicken tandoor",
+                        "quantity": 1,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 10:00:00 AM"
+            },
+            {
+                "booking_id": 11,
+                "order_id": 1384,
+                "order_number": "1001",
+                "delivery_datetime": "05 Jun 2025 09:34:00 AM",
+                "booking_datetime": "05 Jun 2025 15:05:11 PM",
+                "customer_name": "Bakskxjx",
+                "customer_mobile": "6898989865",
+                "total_bill_amount": 102.01,
+                "advance_paid_amount": 50.0,
+                "pending_bill_amount": 52.01,
+                "booking_status": "pending",
+                "special_message": "",
+                "comment": "",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 10:00:00 AM"
+            },
+            {
+                "booking_id": 10,
+                "order_id": 1381,
+                "order_number": "1066",
+                "delivery_datetime": "05 Jun 2025 09:28:00 AM",
+                "booking_datetime": "05 Jun 2025 14:59:26 PM",
+                "customer_name": "Cbjdjd",
+                "customer_mobile": "6565656566",
+                "total_bill_amount": 183.62,
+                "advance_paid_amount": 0.0,
+                "pending_bill_amount": 183.62,
+                "booking_status": "pending",
+                "special_message": "",
+                "comment": "",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 180.0,
+                        "portion_name": "Full",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 09:45:00 AM"
+            },
+            {
+                "booking_id": 9,
+                "order_id": 1380,
+                "order_number": "1065",
+                "delivery_datetime": "05 Jun 2025 09:25:00 AM",
+                "booking_datetime": "05 Jun 2025 14:56:21 PM",
+                "customer_name": "Xbndjd",
+                "customer_mobile": "6898956868",
+                "total_bill_amount": 183.62,
+                "advance_paid_amount": 0.0,
+                "pending_bill_amount": 183.62,
+                "booking_status": "pending",
+                "special_message": "Hdhd",
+                "comment": "Bfjfjjf",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 180.0,
+                        "portion_name": "Full",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 09:30:00 AM"
+            },
+            {
+                "booking_id": 8,
+                "order_id": 1358,
+                "order_number": "1043",
+                "delivery_datetime": "05 Jun 2025 07:43:00 AM",
+                "booking_datetime": "05 Jun 2025 13:15:29 PM",
+                "customer_name": "Bdbbd",
+                "customer_mobile": "7879898698",
+                "total_bill_amount": 183.62,
+                "advance_paid_amount": 0.0,
+                "pending_bill_amount": 183.62,
+                "booking_status": "cancelled",
+                "special_message": "Bxhx",
+                "comment": "Hchf",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 180.0,
+                        "portion_name": "Full",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 07:43:00 AM"
+            },
+            {
+                "booking_id": 6,
+                "order_id": 1354,
+                "order_number": "1039",
+                "delivery_datetime": "05 Jun 2025 07:30:00 AM",
+                "booking_datetime": "05 Jun 2025 13:01:53 PM",
+                "customer_name": "Hdjfjf",
+                "customer_mobile": "9565656566",
+                "total_bill_amount": 102.01,
+                "advance_paid_amount": 102.01,
+                "pending_bill_amount": 0.0,
+                "booking_status": "pending",
+                "special_message": "Bcncjf",
+                "comment": "Hffjfjfjf",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 1,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "06 Jun 2025 11:30:00 AM"
+            },
+            {
+                "booking_id": 14,
+                "order_id": 1420,
+                "order_number": "1002",
+                "delivery_datetime": "05 Jun 2025 07:05:00 AM",
+                "booking_datetime": "05 Jun 2025 18:06:05 PM",
+                "customer_name": "Notifications ",
+                "customer_mobile": "9868686989",
+                "total_bill_amount": 204.02,
+                "advance_paid_amount": 50.0,
+                "pending_bill_amount": 154.02,
+                "booking_status": "pending",
+                "special_message": "Bcbcjcn",
+                "comment": "Fjjfjjf",
+                "menu_items": [
+                    {
+                        "menu_id": 14,
+                        "menu_name": "Lemon Ricee",
+                        "quantity": 2,
+                        "price": 100.0,
+                        "portion_name": "Half",
+                        "special_note": ""
+                    }
+                ],
+                "expected_datetime": "05 Jun 2025 13:21:00 PM"
+            }
+        ]
+    }
+}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						<span class='badge white-text green'>Booking list view test completed successfully</span>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						<span class='badge white-text green'>bookingListViewTest - Test Case PASSED</span>
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="5"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Booking View SetUp</p> 
+                                                <p class="duration text-sm">0h 0m 0s+400ms</p> 
+                                                <span class="datetime">15:00:11 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Booking View SetUp</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:11</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:12</span>
+                                                        <span class='badge badge-default'>0h 0m 0s+400ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Booking View SetUp
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						===== Starting Login API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Constructed Login Base URI: https://men4u.xyz/v2/common/login
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Login payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						POST request executed for login API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Login API executed successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						===== Starting VerifyOTP API Execution =====
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Constructed Verify OTP Base URI: https://men4u.xyz/v2/common/verify_otp
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:11 PM</td>
+				<td>
+						Verify OTP payload prepared with mobile: 6264335759
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						POST request executed for Verify OTP API
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						verify OTP API responded with status code 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Reading Booking View API endpoint data
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Constructed base URI: https://men4u.xyz/v2/common/view_booking_details
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Reading booking view test scenario data
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+                                        </div>
+                                    </li>
+                                    <li class="test-item"  status="pass" test-id="6"
+                                            author=""
+                                            tag=""
+                                            device="">
+                                        <div class="status-avatar pass-bg">
+                                            <i class="fa fa-check text-white"></i>
+                                        </div>
+                                        <div class="open-test">
+                                            <div class="test-detail"> 
+                                                <p class="name">Booking View Test - bookingview_001</p> 
+                                                <p class="duration text-sm">0h 0m 0s+95ms</p> 
+                                                <span class="datetime">15:00:12 PM</span>
+                                            </div>
+                                        </div>
+                                        <div class="test-contents d-none">
+                                            <div class="detail-head">
+                                                <div class="p-v-10 d-inline-block"> 
+                                                    <div class="info">
+                                                        <h5 class="test-status text-pass">Booking View Test - bookingview_001</h5>
+                                                        <span class='badge badge-success'>06.26.2025 15:00:12</span>
+                                                        <span class='badge badge-danger'>06.26.2025 15:00:12</span>
+                                                        <span class='badge badge-default'>0h 0m 0s+95ms</span>
+                                                    </div>
+                                                    <div class="m-t-10 m-l-5">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Test Description: Verify
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Request Body: {"booking_id":101,"app_source":"owner_app","outlet_id":1}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Response Status Code: 200
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Response Body: {"detail":"Booking details retrieved successfully","data":{"booking_id":101,"order_id":5244,"delivery_datetime":"2025-06-10 14:00:00","booking_datetime":"2025-06-26 12:23:40","customer_name":"John Doe","customer_mobile":"9876543210","total_bill_amount":204.02,"advance_paid_amount":100.0,"pending_bill_amount":104.02,"status":"pending","menu_items":[{"menu_id":56,"menu_name":"Chicken tandoor","quantity":2,"price":100.0,"portion_name":"Half","special_note":"Extra spicy"}],"special_message":"Birthday celebration","comment":"Please arrange cake and decorations"}}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Booking view response received successfully
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						Response: {
+    "detail": "Booking details retrieved successfully",
+    "data": {
+        "booking_id": 101,
+        "order_id": 5244,
+        "delivery_datetime": "2025-06-10 14:00:00",
+        "booking_datetime": "2025-06-26 12:23:40",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "status": "pending",
+        "menu_items": [
+            {
+                "menu_id": 56,
+                "menu_name": "Chicken tandoor",
+                "quantity": 2,
+                "price": 100.0,
+                "portion_name": "Half",
+                "special_note": "Extra spicy"
+            }
+        ],
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations"
+    }
+}
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						<span class='badge white-text green'>Booking view test completed successfully</span>
+				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>3:00:12 PM</td>
+				<td>
+						<span class='badge white-text green'>bookingViewTest - Test Case PASSED</span>
 				</td>
 			</tr>
 	</tbody>

@@ -2,8 +2,7 @@ package com.menumitra.apiRequest;
 
 public class loginRequest {
 
-	private String mobile;
-	private String password;
+	String mobile;
 
 	public String getMobile() {
 		return mobile;
@@ -13,12 +12,6 @@ public class loginRequest {
 		this.mobile = mobile;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 
 }

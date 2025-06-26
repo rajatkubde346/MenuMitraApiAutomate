@@ -1,21 +1,530 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="https://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>TestNG Report</title>
-<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
-</head>
-<body>
-<table>
-<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1,702</td><td></td><td></td></tr>
-</table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript</td><td><a href="#m0">udhariLedgerSetUp</a></td><td rowspan="1">1748393144000</td><td rowspan="1">1100</td></tr></tbody>
-</table>
-<h2>Test</h2><h3 id="m0">com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript#udhariLedgerSetUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.menumitra.utilityclass.customException: Failed to set up Udhari Ledger test: Cannot invoke &quot;java.util.Properties.getProperty(String)&quot; because &quot;this.property&quot; is null
-	at com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript.udhariLedgerSetUp(UdhariLedgerCreateTestScript.java:141)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">Suite</th></tr><tr><td><a href="#t0">Test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">8,184</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.menumitratCommonAPITestScript.CreateBookingTestScript</td><td><a href="#m0">bookingCreateTest</a></td><td rowspan="1">1750930210690</td><td rowspan="1">240</td></tr><tr class="passedodd"><td rowspan="1">com.menumitratCommonAPITestScript.ListViewBookingTestScript</td><td><a href="#m1">bookingListViewTest</a></td><td rowspan="1">1750930211517</td><td rowspan="1">241</td></tr><tr class="passedeven"><td rowspan="1">com.menumitratCommonAPITestScript.ViewBookingTestScript</td><td><a href="#m2">bookingViewTest</a></td><td rowspan="1">1750930212342</td><td rowspan="1">96</td></tr></tbody></table><h2>Test</h2><h3 id="m0">com.menumitratCommonAPITestScript.CreateBookingTestScript#bookingCreateTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>bookingcreate</td><td>bookingcreate_001</td><td>positive</td><td>Verify</td><td>post</td><td>{
+    &quot;user_id&quot;: 2,
+    &quot;outlet_id&quot;: 1,
+    &quot;app_source&quot;: &quot;pos_app&quot;,
+    &quot;menu_items&quot;: [
+        {
+            &quot;menu_id&quot;: 56,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 250.00,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+        }
+    ],
+    &quot;booking_details&quot;: {
+        &quot;delivery_datetime&quot;: &quot;2025-06-10 14:00:00&quot;,
+        &quot;expected_datetime&quot;: &quot;2025-06-10 14:30:00&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;
+    },
+    &quot;payment_details&quot;: {
+        &quot;advance_amount&quot;: 100.00,
+        &quot;payment_method&quot;: &quot;advance_payment&quot;
+    }
+}</td><td>{
+  &quot;detail&quot;: &quot;Booking created successfully&quot;,
+  &quot;data&quot;: {
+    &quot;booking_id&quot;: 100,
+    &quot;order_id&quot;: 5243,
+    &quot;order_number&quot;: &quot;2244&quot;,
+    &quot;total_amount&quot;: 204.02,
+    &quot;advance_paid&quot;: 100.0,
+    &quot;pending_amount&quot;: 104.02
+  }
+}</td><td>200</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m1">com.menumitratCommonAPITestScript.ListViewBookingTestScript#bookingListViewTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>bookinglistview</td><td>bookinglistview_001</td><td>positive</td><td>Verify</td><td>post</td><td>{
+    &quot;app_source&quot;:&quot;owner_app&quot;,
+    &quot;outlet_id&quot;:1,
+    &quot;start_date&quot;: &quot;02 Jun 2025&quot;,
+    &quot;end_date&quot;: &quot;15 Jun 2025&quot;
+    
+}</td><td>{
+  &quot;detail&quot;: &quot;Bookings retrieved successfully&quot;,
+  &quot;data&quot;: {
+    &quot;total&quot;: 17,
+    &quot;bookings&quot;: [
+      {
+        &quot;booking_id&quot;: 7,
+        &quot;order_id&quot;: 1357,
+        &quot;order_number&quot;: &quot;1042&quot;,
+        &quot;delivery_datetime&quot;: &quot;12 Jun 2025 08:34:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 13:13:01 PM&quot;,
+        &quot;customer_name&quot;: &quot;Bxjdjdj&quot;,
+        &quot;customer_mobile&quot;: &quot;9565686566&quot;,
+        &quot;total_bill_amount&quot;: 102.01,
+        &quot;advance_paid_amount&quot;: 0.0,
+        &quot;pending_bill_amount&quot;: 102.01,
+        &quot;booking_status&quot;: &quot;cancelled&quot;,
+        &quot;special_message&quot;: &quot;Bchjd&quot;,
+        &quot;comment&quot;: &quot;Dhhfjfjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;18 Jun 2025 10:34:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 1,
+        &quot;order_id&quot;: 1316,
+        &quot;order_number&quot;: &quot;1001&quot;,
+        &quot;delivery_datetime&quot;: &quot;10 Jun 2025 14:00:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;04 Jun 2025 15:09:34 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 204.02,
+        &quot;advance_paid_amount&quot;: 204.02,
+        &quot;pending_bill_amount&quot;: 0.0,
+        &quot;booking_status&quot;: &quot;settled&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 11,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;10 Jun 2025 14:30:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 101,
+        &quot;order_id&quot;: 5244,
+        &quot;order_number&quot;: &quot;2245&quot;,
+        &quot;delivery_datetime&quot;: &quot;10 Jun 2025 14:00:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;26 Jun 2025 12:23:40 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 204.02,
+        &quot;advance_paid_amount&quot;: 100.0,
+        &quot;pending_bill_amount&quot;: 104.02,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 56,
+            &quot;menu_name&quot;: &quot;Chicken tandoor&quot;,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;10 Jun 2025 14:30:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 100,
+        &quot;order_id&quot;: 5243,
+        &quot;order_number&quot;: &quot;2244&quot;,
+        &quot;delivery_datetime&quot;: &quot;10 Jun 2025 14:00:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;26 Jun 2025 12:10:42 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 204.02,
+        &quot;advance_paid_amount&quot;: 100.0,
+        &quot;pending_bill_amount&quot;: 104.02,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 56,
+            &quot;menu_name&quot;: &quot;Chicken tandoor&quot;,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;10 Jun 2025 14:30:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 99,
+        &quot;order_id&quot;: 5242,
+        &quot;order_number&quot;: &quot;2243&quot;,
+        &quot;delivery_datetime&quot;: &quot;10 Jun 2025 14:00:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;26 Jun 2025 12:10:00 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 204.02,
+        &quot;advance_paid_amount&quot;: 100.0,
+        &quot;pending_bill_amount&quot;: 104.02,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 11,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;10 Jun 2025 14:30:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 73,
+        &quot;order_id&quot;: 5112,
+        &quot;order_number&quot;: &quot;2233&quot;,
+        &quot;delivery_datetime&quot;: &quot;10 Jun 2025 14:00:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;23 Jun 2025 16:36:34 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 102.01,
+        &quot;advance_paid_amount&quot;: 100.0,
+        &quot;pending_bill_amount&quot;: 2.01,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 13,
+            &quot;menu_name&quot;: &quot;Jeera Rice&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;No onions&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;10 Jun 2025 14:30:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 2,
+        &quot;order_id&quot;: 1319,
+        &quot;order_number&quot;: &quot;1004&quot;,
+        &quot;delivery_datetime&quot;: &quot;09 Jun 2025 21:30:00 PM&quot;,
+        &quot;booking_datetime&quot;: &quot;04 Jun 2025 15:24:15 PM&quot;,
+        &quot;customer_name&quot;: &quot;John Doe&quot;,
+        &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+        &quot;total_bill_amount&quot;: 1020.1,
+        &quot;advance_paid_amount&quot;: 100.0,
+        &quot;pending_bill_amount&quot;: 920.1,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+        &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 11,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 10,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;Extra spicy&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;04 Jun 2025 04:24:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 13,
+        &quot;order_id&quot;: 1414,
+        &quot;order_number&quot;: &quot;1001&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 11:48:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 17:20:11 PM&quot;,
+        &quot;customer_name&quot;: &quot;Bxnxnxn&quot;,
+        &quot;customer_mobile&quot;: &quot;8695956595&quot;,
+        &quot;total_bill_amount&quot;: 51.0,
+        &quot;advance_paid_amount&quot;: 20.0,
+        &quot;pending_bill_amount&quot;: 31.0,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Hfhfjff&quot;,
+        &quot;comment&quot;: &quot;Hfhfjfjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 51,
+            &quot;menu_name&quot;: &quot;testing menu&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 50.0,
+            &quot;portion_name&quot;: &quot;half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 11:48:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 4,
+        &quot;order_id&quot;: 1350,
+        &quot;order_number&quot;: &quot;1035&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 10:00:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 12:30:50 PM&quot;,
+        &quot;customer_name&quot;: &quot;Testing again&quot;,
+        &quot;customer_mobile&quot;: &quot;8549595995&quot;,
+        &quot;total_bill_amount&quot;: 336.63,
+        &quot;advance_paid_amount&quot;: 336.63,
+        &quot;pending_bill_amount&quot;: 0.0,
+        &quot;booking_status&quot;: &quot;settled&quot;,
+        &quot;special_message&quot;: &quot;Nxjdjxh&quot;,
+        &quot;comment&quot;: &quot;Vdhdjdj&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 51,
+            &quot;menu_name&quot;: &quot;testing menu&quot;,
+            &quot;quantity&quot;: 3,
+            &quot;price&quot;: 50.0,
+            &quot;portion_name&quot;: &quot;half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          },
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 180.0,
+            &quot;portion_name&quot;: &quot;Full&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;06 Jun 2025 09:00:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 3,
+        &quot;order_id&quot;: 1349,
+        &quot;order_number&quot;: &quot;1034&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 09:53:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 12:27:45 PM&quot;,
+        &quot;customer_name&quot;: &quot;Test it&quot;,
+        &quot;customer_mobile&quot;: &quot;9565656565&quot;,
+        &quot;total_bill_amount&quot;: 51.0,
+        &quot;advance_paid_amount&quot;: 49.98,
+        &quot;pending_bill_amount&quot;: 1.02,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Name on cake nothing&quot;,
+        &quot;comment&quot;: &quot;Less sweet &quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 51,
+            &quot;menu_name&quot;: &quot;testing menu&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 50.0,
+            &quot;portion_name&quot;: &quot;half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;07 Jun 2025 16:47:00 PM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 12,
+        &quot;order_id&quot;: 1385,
+        &quot;order_number&quot;: &quot;1002&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 09:37:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 15:08:07 PM&quot;,
+        &quot;customer_name&quot;: &quot;Create booking&quot;,
+        &quot;customer_mobile&quot;: &quot;9686565665&quot;,
+        &quot;total_bill_amount&quot;: 102.01,
+        &quot;advance_paid_amount&quot;: 31.21,
+        &quot;pending_bill_amount&quot;: 70.8,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Bdjdj&quot;,
+        &quot;comment&quot;: &quot;Jdjfjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 55,
+            &quot;menu_name&quot;: &quot;Chicken tandoor&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 10:00:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 11,
+        &quot;order_id&quot;: 1384,
+        &quot;order_number&quot;: &quot;1001&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 09:34:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 15:05:11 PM&quot;,
+        &quot;customer_name&quot;: &quot;Bakskxjx&quot;,
+        &quot;customer_mobile&quot;: &quot;6898989865&quot;,
+        &quot;total_bill_amount&quot;: 102.01,
+        &quot;advance_paid_amount&quot;: 50.0,
+        &quot;pending_bill_amount&quot;: 52.01,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;&quot;,
+        &quot;comment&quot;: &quot;&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 10:00:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 10,
+        &quot;order_id&quot;: 1381,
+        &quot;order_number&quot;: &quot;1066&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 09:28:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 14:59:26 PM&quot;,
+        &quot;customer_name&quot;: &quot;Cbjdjd&quot;,
+        &quot;customer_mobile&quot;: &quot;6565656566&quot;,
+        &quot;total_bill_amount&quot;: 183.62,
+        &quot;advance_paid_amount&quot;: 0.0,
+        &quot;pending_bill_amount&quot;: 183.62,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;&quot;,
+        &quot;comment&quot;: &quot;&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 180.0,
+            &quot;portion_name&quot;: &quot;Full&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 09:45:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 9,
+        &quot;order_id&quot;: 1380,
+        &quot;order_number&quot;: &quot;1065&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 09:25:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 14:56:21 PM&quot;,
+        &quot;customer_name&quot;: &quot;Xbndjd&quot;,
+        &quot;customer_mobile&quot;: &quot;6898956868&quot;,
+        &quot;total_bill_amount&quot;: 183.62,
+        &quot;advance_paid_amount&quot;: 0.0,
+        &quot;pending_bill_amount&quot;: 183.62,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Hdhd&quot;,
+        &quot;comment&quot;: &quot;Bfjfjjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 180.0,
+            &quot;portion_name&quot;: &quot;Full&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 09:30:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 8,
+        &quot;order_id&quot;: 1358,
+        &quot;order_number&quot;: &quot;1043&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 07:43:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 13:15:29 PM&quot;,
+        &quot;customer_name&quot;: &quot;Bdbbd&quot;,
+        &quot;customer_mobile&quot;: &quot;7879898698&quot;,
+        &quot;total_bill_amount&quot;: 183.62,
+        &quot;advance_paid_amount&quot;: 0.0,
+        &quot;pending_bill_amount&quot;: 183.62,
+        &quot;booking_status&quot;: &quot;cancelled&quot;,
+        &quot;special_message&quot;: &quot;Bxhx&quot;,
+        &quot;comment&quot;: &quot;Hchf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 180.0,
+            &quot;portion_name&quot;: &quot;Full&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 07:43:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 6,
+        &quot;order_id&quot;: 1354,
+        &quot;order_number&quot;: &quot;1039&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 07:30:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 13:01:53 PM&quot;,
+        &quot;customer_name&quot;: &quot;Hdjfjf&quot;,
+        &quot;customer_mobile&quot;: &quot;9565656566&quot;,
+        &quot;total_bill_amount&quot;: 102.01,
+        &quot;advance_paid_amount&quot;: 102.01,
+        &quot;pending_bill_amount&quot;: 0.0,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Bcncjf&quot;,
+        &quot;comment&quot;: &quot;Hffjfjfjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 1,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;06 Jun 2025 11:30:00 AM&quot;
+      },
+      {
+        &quot;booking_id&quot;: 14,
+        &quot;order_id&quot;: 1420,
+        &quot;order_number&quot;: &quot;1002&quot;,
+        &quot;delivery_datetime&quot;: &quot;05 Jun 2025 07:05:00 AM&quot;,
+        &quot;booking_datetime&quot;: &quot;05 Jun 2025 18:06:05 PM&quot;,
+        &quot;customer_name&quot;: &quot;Notifications &quot;,
+        &quot;customer_mobile&quot;: &quot;9868686989&quot;,
+        &quot;total_bill_amount&quot;: 204.02,
+        &quot;advance_paid_amount&quot;: 50.0,
+        &quot;pending_bill_amount&quot;: 154.02,
+        &quot;booking_status&quot;: &quot;pending&quot;,
+        &quot;special_message&quot;: &quot;Bcbcjcn&quot;,
+        &quot;comment&quot;: &quot;Fjjfjjf&quot;,
+        &quot;menu_items&quot;: [
+          {
+            &quot;menu_id&quot;: 14,
+            &quot;menu_name&quot;: &quot;Lemon Ricee&quot;,
+            &quot;quantity&quot;: 2,
+            &quot;price&quot;: 100.0,
+            &quot;portion_name&quot;: &quot;Half&quot;,
+            &quot;special_note&quot;: &quot;&quot;
+          }
+        ],
+        &quot;expected_datetime&quot;: &quot;05 Jun 2025 13:21:00 PM&quot;
+      }
+    ]
+  }
+}</td><td>200</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m2">com.menumitratCommonAPITestScript.ViewBookingTestScript#bookingViewTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th></tr><tr class="param stripe"><td>bookingview</td><td>bookingview_001</td><td>positive</td><td>Verify</td><td>post</td><td>{
+    &quot;outlet_id&quot;:1,
+    &quot;booking_id&quot;:101,
+    &quot;app_source&quot;:&quot;owner_app&quot;
+}</td><td>{
+  &quot;detail&quot;: &quot;Booking details retrieved successfully&quot;,
+  &quot;data&quot;: {
+    &quot;booking_id&quot;: 101,
+    &quot;order_id&quot;: 5244,
+    &quot;delivery_datetime&quot;: &quot;2025-06-10 14:00:00&quot;,
+    &quot;booking_datetime&quot;: &quot;2025-06-26 12:23:40&quot;,
+    &quot;customer_name&quot;: &quot;John Doe&quot;,
+    &quot;customer_mobile&quot;: &quot;9876543210&quot;,
+    &quot;total_bill_amount&quot;: 204.02,
+    &quot;advance_paid_amount&quot;: 100.0,
+    &quot;pending_bill_amount&quot;: 104.02,
+    &quot;status&quot;: &quot;pending&quot;,
+    &quot;menu_items&quot;: [
+      {
+        &quot;menu_id&quot;: 56,
+        &quot;menu_name&quot;: &quot;Chicken tandoor&quot;,
+        &quot;quantity&quot;: 2,
+        &quot;price&quot;: 100.0,
+        &quot;portion_name&quot;: &quot;Half&quot;,
+        &quot;special_note&quot;: &quot;Extra spicy&quot;
+      }
+    ],
+    &quot;special_message&quot;: &quot;Birthday celebration&quot;,
+    &quot;comment&quot;: &quot;Please arrange cake and decorations&quot;
+  }
+}</td><td>200</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

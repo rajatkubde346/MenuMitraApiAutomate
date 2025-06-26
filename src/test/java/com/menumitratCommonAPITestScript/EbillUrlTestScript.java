@@ -110,48 +110,6 @@ public class EbillUrlTestScript extends APIBase {
     }
 
     /**
-     * Data provider for ebill URL negative test scenarios
-     */
-    @DataProvider(name = "getEbillUrlNegativeData")
-    public static Object[][] getEbillUrlNegativeData() throws customException {
-        try {
-            LogUtils.info("Reading ebill URL negative test scenario data");
-
-            Object[][] readExcelData = DataDriven.readExcelData(excelSheetPathForGetApis, "CommonAPITestScenario");
-            if (readExcelData == null || readExcelData.length == 0) {
-                LogUtils.error("No ebill URL negative test scenario data found in Excel sheet");
-                throw new customException("No ebill URL negative test scenario data found in Excel sheet");
-            }
-
-            List<Object[]> filteredData = new ArrayList<>();
-
-            for (int i = 0; i < readExcelData.length; i++) {
-                Object[] row = readExcelData[i];
-                if (row != null && row.length >= 2 &&
-                        "ebillurl".equalsIgnoreCase(Objects.toString(row[0], "")) &&
-                        "negative".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-
-                    filteredData.add(row);
-                }
-            }
-
-            Object[][] obj = new Object[filteredData.size()][];
-            for (int i = 0; i < filteredData.size(); i++) {
-                obj[i] = filteredData.get(i);
-            }
-
-            LogUtils.info("Successfully retrieved " + obj.length + " negative test scenarios for ebill URL");
-            return obj;
-        } catch (Exception e) {
-            LogUtils.error("Error while reading ebill URL negative test scenario data: " + e.getMessage());
-            ExtentReport.getTest().log(Status.ERROR,
-                    "Error while reading ebill URL negative test scenario data: " + e.getMessage());
-            throw new customException(
-                    "Error while reading ebill URL negative test scenario data: " + e.getMessage());
-        }
-    }
-
-    /**
      * Setup method to initialize test environment
      */
     @BeforeClass
@@ -270,6 +228,8 @@ public class EbillUrlTestScript extends APIBase {
         }
     }
 
+<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitratCommonAPITestScript/EbillUrlTestScript.java
+=======
     /**
      * Test method for negative test cases
      */
@@ -353,14 +313,14 @@ public class EbillUrlTestScript extends APIBase {
         }
     }
 
-   // @AfterClass
+>>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitratCommonAPITestScript/EbillUrlTestScript.java
     private void tearDown() {
         try {
             LogUtils.info("===Test environment tear down started===");
             ExtentReport.createTest("Ebill URL Test Teardown");
 
             LogUtils.info("Logging out user");
-            ActionsMethods.logout();
+            //ActionsMethods.logout();
 
             LogUtils.info("Clearing tokens");
             TokenManagers.clearTokens();

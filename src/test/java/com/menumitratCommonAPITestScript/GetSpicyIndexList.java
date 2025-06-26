@@ -155,13 +155,12 @@ public class GetSpicyIndexList extends APIBase
                 if (row != null && row.length >= 3 &&
                         "getspicyindexlist".equalsIgnoreCase(Objects.toString(row[0], "")) &&
                         "positive".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-
                     filteredData.add(row);
                 }
             }
 
             if (filteredData.isEmpty()) {
-                String errorMsg = "No valid spicy index list test data found after filtering";
+                String errorMsg = "No valid spicy index list positive test data found after filtering";
                 LogUtils.failure(logger, errorMsg);
                 ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
                 throw new customException(errorMsg);
@@ -172,8 +171,8 @@ public class GetSpicyIndexList extends APIBase
                 obj[i] = filteredData.get(i);
             }
 
-            LogUtils.info("Successfully retrieved " + obj.length + " spicy index list test scenarios");
-            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " spicy index list test scenarios");
+            LogUtils.info("Successfully retrieved " + obj.length + " spicy index list positive test scenarios");
+            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " spicy index list positive test scenarios");
             return obj;
         } catch (Exception e) {
             String errorMsg = "Error in getSpicyIndexListData: " + e.getMessage();

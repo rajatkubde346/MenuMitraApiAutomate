@@ -5,9 +5,8 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,9 +20,9 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
-      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
@@ -50,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\DELL\Downloads\MenuMitraAPIAutomate\MenumitraAPi\testng.xml</span>
+                    <span>C:\Users\DELL\Downloads\New folder (9)\MenuMitraApiAutomate\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +91,47 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">3 methods,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.CreateBookingTestScript" class="method navigator-link" hash-for-method="bookingCreateTest(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    &quot;user_id&quot;: 2,
+    &quot;outlet_id&quot;: 1,
+  ...)">bookingCreateTest(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    "user_id": 2,
+    "outlet_id": 1,
+  ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.ListViewBookingTestScript" class="method navigator-link" hash-for-method="bookingListViewTest(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    &quot;app_source&quot;:&quot;owner_app&quot;,
+    &quot;o...)">bookingListViewTest(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    "app_source":"owner_app",
+    "o...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.ViewBookingTestScript" class="method navigator-link" hash-for-method="bookingViewTest(bookingview, bookingview_001, positive, Verify, post, {
+    &quot;outlet_id&quot;:1,
+    &quot;booking_id&quot;:101,
+   ...)">bookingViewTest(bookingview, bookingview_001, positive, Verify, post, {
+    "outlet_id":1,
+    "booking_id":101,
+   ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -104,20 +143,614 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.menumitratCommonAPITestScript.ListViewBookingTestScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bookingListViewTest(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    &quot;app_source&quot;:&quot;owner_app&quot;,
+    &quot;o...)">
+                  </a> <!-- bookingListViewTest(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    "app_source":"owner_app",
+    "o...) -->
+                  <span class="method-name">bookingListViewTest</span>
+                  <span class="parameters">(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    "app_source":"owner_app",
+    "outlet_id":1,
+    "start_date": "02 Jun 2025",
+    "end_date": "15 Jun 2025"
+    
+}, {
+  "detail": "Bookings retrieved successfully",
+  "data": {
+    "total": 17,
+    "bookings": [
+      {
+        "booking_id": 7,
+        "order_id": 1357,
+        "order_number": "1042",
+        "delivery_datetime": "12 Jun 2025 08:34:00 AM",
+        "booking_datetime": "05 Jun 2025 13:13:01 PM",
+        "customer_name": "Bxjdjdj",
+        "customer_mobile": "9565686566",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 102.01,
+        "booking_status": "cancelled",
+        "special_message": "Bchjd",
+        "comment": "Dhhfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "18 Jun 2025 10:34:00 AM"
+      },
+      {
+        "booking_id": 1,
+        "order_id": 1316,
+        "order_number": "1001",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "04 Jun 2025 15:09:34 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 204.02,
+        "pending_bill_amount": 0.0,
+        "booking_status": "settled",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 101,
+        "order_id": 5244,
+        "order_number": "2245",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:23:40 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 56,
+            "menu_name": "Chicken tandoor",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 100,
+        "order_id": 5243,
+        "order_number": "2244",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:10:42 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 56,
+            "menu_name": "Chicken tandoor",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 99,
+        "order_id": 5242,
+        "order_number": "2243",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:10:00 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 73,
+        "order_id": 5112,
+        "order_number": "2233",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "23 Jun 2025 16:36:34 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 2.01,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 13,
+            "menu_name": "Jeera Rice",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "No onions"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 2,
+        "order_id": 1319,
+        "order_number": "1004",
+        "delivery_datetime": "09 Jun 2025 21:30:00 PM",
+        "booking_datetime": "04 Jun 2025 15:24:15 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 1020.1,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 920.1,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 10,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "04 Jun 2025 04:24:00 AM"
+      },
+      {
+        "booking_id": 13,
+        "order_id": 1414,
+        "order_number": "1001",
+        "delivery_datetime": "05 Jun 2025 11:48:00 AM",
+        "booking_datetime": "05 Jun 2025 17:20:11 PM",
+        "customer_name": "Bxnxnxn",
+        "customer_mobile": "8695956595",
+        "total_bill_amount": 51.0,
+        "advance_paid_amount": 20.0,
+        "pending_bill_amount": 31.0,
+        "booking_status": "pending",
+        "special_message": "Hfhfjff",
+        "comment": "Hfhfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 1,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 11:48:00 AM"
+      },
+      {
+        "booking_id": 4,
+        "order_id": 1350,
+        "order_number": "1035",
+        "delivery_datetime": "05 Jun 2025 10:00:00 AM",
+        "booking_datetime": "05 Jun 2025 12:30:50 PM",
+        "customer_name": "Testing again",
+        "customer_mobile": "8549595995",
+        "total_bill_amount": 336.63,
+        "advance_paid_amount": 336.63,
+        "pending_bill_amount": 0.0,
+        "booking_status": "settled",
+        "special_message": "Nxjdjxh",
+        "comment": "Vdhdjdj",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 3,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          },
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "06 Jun 2025 09:00:00 AM"
+      },
+      {
+        "booking_id": 3,
+        "order_id": 1349,
+        "order_number": "1034",
+        "delivery_datetime": "05 Jun 2025 09:53:00 AM",
+        "booking_datetime": "05 Jun 2025 12:27:45 PM",
+        "customer_name": "Test it",
+        "customer_mobile": "9565656565",
+        "total_bill_amount": 51.0,
+        "advance_paid_amount": 49.98,
+        "pending_bill_amount": 1.02,
+        "booking_status": "pending",
+        "special_message": "Name on cake nothing",
+        "comment": "Less sweet ",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 1,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "07 Jun 2025 16:47:00 PM"
+      },
+      {
+        "booking_id": 12,
+        "order_id": 1385,
+        "order_number": "1002",
+        "delivery_datetime": "05 Jun 2025 09:37:00 AM",
+        "booking_datetime": "05 Jun 2025 15:08:07 PM",
+        "customer_name": "Create booking",
+        "customer_mobile": "9686565665",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 31.21,
+        "pending_bill_amount": 70.8,
+        "booking_status": "pending",
+        "special_message": "Bdjdj",
+        "comment": "Jdjfjf",
+        "menu_items": [
+          {
+            "menu_id": 55,
+            "menu_name": "Chicken tandoor",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 10:00:00 AM"
+      },
+      {
+        "booking_id": 11,
+        "order_id": 1384,
+        "order_number": "1001",
+        "delivery_datetime": "05 Jun 2025 09:34:00 AM",
+        "booking_datetime": "05 Jun 2025 15:05:11 PM",
+        "customer_name": "Bakskxjx",
+        "customer_mobile": "6898989865",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 50.0,
+        "pending_bill_amount": 52.01,
+        "booking_status": "pending",
+        "special_message": "",
+        "comment": "",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 10:00:00 AM"
+      },
+      {
+        "booking_id": 10,
+        "order_id": 1381,
+        "order_number": "1066",
+        "delivery_datetime": "05 Jun 2025 09:28:00 AM",
+        "booking_datetime": "05 Jun 2025 14:59:26 PM",
+        "customer_name": "Cbjdjd",
+        "customer_mobile": "6565656566",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "pending",
+        "special_message": "",
+        "comment": "",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 09:45:00 AM"
+      },
+      {
+        "booking_id": 9,
+        "order_id": 1380,
+        "order_number": "1065",
+        "delivery_datetime": "05 Jun 2025 09:25:00 AM",
+        "booking_datetime": "05 Jun 2025 14:56:21 PM",
+        "customer_name": "Xbndjd",
+        "customer_mobile": "6898956868",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "pending",
+        "special_message": "Hdhd",
+        "comment": "Bfjfjjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 09:30:00 AM"
+      },
+      {
+        "booking_id": 8,
+        "order_id": 1358,
+        "order_number": "1043",
+        "delivery_datetime": "05 Jun 2025 07:43:00 AM",
+        "booking_datetime": "05 Jun 2025 13:15:29 PM",
+        "customer_name": "Bdbbd",
+        "customer_mobile": "7879898698",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "cancelled",
+        "special_message": "Bxhx",
+        "comment": "Hchf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 07:43:00 AM"
+      },
+      {
+        "booking_id": 6,
+        "order_id": 1354,
+        "order_number": "1039",
+        "delivery_datetime": "05 Jun 2025 07:30:00 AM",
+        "booking_datetime": "05 Jun 2025 13:01:53 PM",
+        "customer_name": "Hdjfjf",
+        "customer_mobile": "9565656566",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 102.01,
+        "pending_bill_amount": 0.0,
+        "booking_status": "pending",
+        "special_message": "Bcncjf",
+        "comment": "Hffjfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "06 Jun 2025 11:30:00 AM"
+      },
+      {
+        "booking_id": 14,
+        "order_id": 1420,
+        "order_number": "1002",
+        "delivery_datetime": "05 Jun 2025 07:05:00 AM",
+        "booking_datetime": "05 Jun 2025 18:06:05 PM",
+        "customer_name": "Notifications ",
+        "customer_mobile": "9868686989",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 50.0,
+        "pending_bill_amount": 154.02,
+        "booking_status": "pending",
+        "special_message": "Bcbcjcn",
+        "comment": "Fjjfjjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 13:21:00 PM"
+      }
+    ]
+  }
+}, 200)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.menumitratCommonAPITestScript.CreateBookingTestScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bookingCreateTest(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    &quot;user_id&quot;: 2,
+    &quot;outlet_id&quot;: 1,
+  ...)">
+                  </a> <!-- bookingCreateTest(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    "user_id": 2,
+    "outlet_id": 1,
+  ...) -->
+                  <span class="method-name">bookingCreateTest</span>
+                  <span class="parameters">(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    "user_id": 2,
+    "outlet_id": 1,
+    "app_source": "pos_app",
+    "menu_items": [
+        {
+            "menu_id": 56,
+            "quantity": 2,
+            "price": 250.00,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+        }
+    ],
+    "booking_details": {
+        "delivery_datetime": "2025-06-10 14:00:00",
+        "expected_datetime": "2025-06-10 14:30:00",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations"
+    },
+    "payment_details": {
+        "advance_amount": 100.00,
+        "payment_method": "advance_payment"
+    }
+}, {
+  "detail": "Booking created successfully",
+  "data": {
+    "booking_id": 100,
+    "order_id": 5243,
+    "order_number": "2244",
+    "total_amount": 204.02,
+    "advance_paid": 100.0,
+    "pending_amount": 104.02
+  }
+}, 200)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.menumitratCommonAPITestScript.ViewBookingTestScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bookingViewTest(bookingview, bookingview_001, positive, Verify, post, {
+    &quot;outlet_id&quot;:1,
+    &quot;booking_id&quot;:101,
+   ...)">
+                  </a> <!-- bookingViewTest(bookingview, bookingview_001, positive, Verify, post, {
+    "outlet_id":1,
+    "booking_id":101,
+   ...) -->
+                  <span class="method-name">bookingViewTest</span>
+                  <span class="parameters">(bookingview, bookingview_001, positive, Verify, post, {
+    "outlet_id":1,
+    "booking_id":101,
+    "app_source":"owner_app"
+}, {
+  "detail": "Booking details retrieved successfully",
+  "data": {
+    "booking_id": 101,
+    "order_id": 5244,
+    "delivery_datetime": "2025-06-10 14:00:00",
+    "booking_datetime": "2025-06-26 12:23:40",
+    "customer_name": "John Doe",
+    "customer_mobile": "9876543210",
+    "total_bill_amount": 204.02,
+    "advance_paid_amount": 100.0,
+    "pending_bill_amount": 104.02,
+    "status": "pending",
+    "menu_items": [
+      {
+        "menu_id": 56,
+        "menu_name": "Chicken tandoor",
+        "quantity": 2,
+        "price": 100.0,
+        "portion_name": "Half",
+        "special_note": "Extra spicy"
+      }
+    ],
+    "special_message": "Birthday celebration",
+    "comment": "Please arrange cake and decorations"
+  }
+}, 200)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\DELL\Downloads\MenuMitraAPIAutomate\MenumitraAPi\testng.xml</span>
+            <span class="header-content">C:\Users\DELL\Downloads\New folder (9)\MenuMitraApiAutomate\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.menumitra.superclass.APIBase&quot;/&gt;
-      &lt;class name=&quot;com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript&quot;/&gt;
+      &lt;class name=&quot;com.menumitratCommonAPITestScript.CreateBookingTestScript&quot;/&gt;
+      &lt;class name=&quot;com.menumitratCommonAPITestScript.ListViewBookingTestScript&quot;/&gt;
+      &lt;class name=&quot;com.menumitratCommonAPITestScript.ViewBookingTestScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -131,7 +764,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -157,12 +790,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(3);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'bookingListViewTest')
+data.setCell(0, 2, 'com.menumitratCommonAPITestScript.ListViewBookingTestScript')
+data.setCell(0, 3, 241);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'bookingCreateTest')
+data.setCell(1, 2, 'com.menumitratCommonAPITestScript.CreateBookingTestScript')
+data.setCell(1, 3, 240);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'bookingViewTest')
+data.setCell(2, 2, 'com.menumitratCommonAPITestScript.ViewBookingTestScript')
+data.setCell(2, 3, 96);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 577 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -177,11 +822,25 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript</span>
+              <span class="ignored-class-name">com.menumitratCommonAPITestScript.ListViewBookingTestScript</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">setUp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.menumitratCommonAPITestScript.CreateBookingTestScript</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">setUp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.menumitratCommonAPITestScript.ViewBookingTestScript</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setUp</span>
                 <br/>
@@ -202,24 +861,55 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.menumitratCommonAPITestScript.CreateBookingTestScript</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">udhariLedgerSetUp</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-name">bookingCreateSetUp</span>
+                <span class="method-start">283 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">bookingCreateTest(bookingcreate, bookingcreate_001, positive, Verify, post, {
+    "user_id": 2,
+    "outlet_id": 1,
+  ...)</span>
+                <span class="method-start">6507 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.menumitratCommonAPITestScript.ListViewBookingTestScript</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">bookingListViewSetUp</span>
+                <span class="method-start">6753 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">bookingListViewTest(bookinglistview, bookinglistview_001, positive, Verify, post, {
+    "app_source":"owner_app",
+    "o...)</span>
+                <span class="method-start">7334 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.menumitratCommonAPITestScript.ViewBookingTestScript</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">bookingViewSetUp</span>
+                <span class="method-start">7579 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">bookingViewTest(bookingview, bookingview_001, positive, Verify, post, {
+    "outlet_id":1,
+    "booking_id":101,
+   ...)</span>
+                <span class="method-start">8159 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.menumitra.superclass.APIBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">2231 ms</span>
+                <span class="method-start">8799 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
-<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

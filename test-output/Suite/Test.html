@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 28 06:15:43 IST 2025</td>
+<td>Started on:</td><td>Thu Jun 26 15:00:04 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1702 ms)</td>
+<tr><td>Total time:</td><td>8 seconds (8184 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,49 +67,556 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript.udhariLedgerSetUp()'><b>udhariLedgerSetUp</b><br>Test class: com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript</td>
-<td><div><pre>com.menumitra.utilityclass.customException: Failed to set up Udhari Ledger test: Cannot invoke &quot;java.util.Properties.getProperty(String)&quot; because &quot;this.property&quot; is null
-	at com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript.udhariLedgerSetUp(UdhariLedgerCreateTestScript.java:141)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace768192757", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace768192757'><pre>com.menumitra.utilityclass.customException: Failed to set up Udhari Ledger test: Cannot invoke &quot;java.util.Properties.getProperty(String)&quot; because &quot;this.property&quot; is null
-	at com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript.udhariLedgerSetUp(UdhariLedgerCreateTestScript.java:141)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>1</td>
-<td>com.menumitratCommonAPITestScript.UdhariLedgerCreateTestScript@3f6b0be5</td></tr>
+<td title='com.menumitratCommonAPITestScript.CreateBookingTestScript.bookingCreateTest()'><b>bookingCreateTest</b><br>Test class: com.menumitratCommonAPITestScript.CreateBookingTestScript<br>Parameters: bookingcreate, bookingcreate_001, positive, Verify, post, {
+    "user_id": 2,
+    "outlet_id": 1,
+    "app_source": "pos_app",
+    "menu_items": [
+        {
+            "menu_id": 56,
+            "quantity": 2,
+            "price": 250.00,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+        }
+    ],
+    "booking_details": {
+        "delivery_datetime": "2025-06-10 14:00:00",
+        "expected_datetime": "2025-06-10 14:30:00",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations"
+    },
+    "payment_details": {
+        "advance_amount": 100.00,
+        "payment_method": "advance_payment"
+    }
+}, {
+  "detail": "Booking created successfully",
+  "data": {
+    "booking_id": 100,
+    "order_id": 5243,
+    "order_number": "2244",
+    "total_amount": 204.02,
+    "advance_paid": 100.0,
+    "pending_amount": 104.02
+  }
+}, 200</td>
+<td></td>
+<td>0</td>
+<td>com.menumitratCommonAPITestScript.CreateBookingTestScript@2df3b89c</td></tr>
+<tr>
+<td title='com.menumitratCommonAPITestScript.ListViewBookingTestScript.bookingListViewTest()'><b>bookingListViewTest</b><br>Test class: com.menumitratCommonAPITestScript.ListViewBookingTestScript<br>Parameters: bookinglistview, bookinglistview_001, positive, Verify, post, {
+    "app_source":"owner_app",
+    "outlet_id":1,
+    "start_date": "02 Jun 2025",
+    "end_date": "15 Jun 2025"
+    
+}, {
+  "detail": "Bookings retrieved successfully",
+  "data": {
+    "total": 17,
+    "bookings": [
+      {
+        "booking_id": 7,
+        "order_id": 1357,
+        "order_number": "1042",
+        "delivery_datetime": "12 Jun 2025 08:34:00 AM",
+        "booking_datetime": "05 Jun 2025 13:13:01 PM",
+        "customer_name": "Bxjdjdj",
+        "customer_mobile": "9565686566",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 102.01,
+        "booking_status": "cancelled",
+        "special_message": "Bchjd",
+        "comment": "Dhhfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "18 Jun 2025 10:34:00 AM"
+      },
+      {
+        "booking_id": 1,
+        "order_id": 1316,
+        "order_number": "1001",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "04 Jun 2025 15:09:34 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 204.02,
+        "pending_bill_amount": 0.0,
+        "booking_status": "settled",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 101,
+        "order_id": 5244,
+        "order_number": "2245",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:23:40 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 56,
+            "menu_name": "Chicken tandoor",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 100,
+        "order_id": 5243,
+        "order_number": "2244",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:10:42 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 56,
+            "menu_name": "Chicken tandoor",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 99,
+        "order_id": 5242,
+        "order_number": "2243",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "26 Jun 2025 12:10:00 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 104.02,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 73,
+        "order_id": 5112,
+        "order_number": "2233",
+        "delivery_datetime": "10 Jun 2025 14:00:00 PM",
+        "booking_datetime": "23 Jun 2025 16:36:34 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 2.01,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 13,
+            "menu_name": "Jeera Rice",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "No onions"
+          }
+        ],
+        "expected_datetime": "10 Jun 2025 14:30:00 PM"
+      },
+      {
+        "booking_id": 2,
+        "order_id": 1319,
+        "order_number": "1004",
+        "delivery_datetime": "09 Jun 2025 21:30:00 PM",
+        "booking_datetime": "04 Jun 2025 15:24:15 PM",
+        "customer_name": "John Doe",
+        "customer_mobile": "9876543210",
+        "total_bill_amount": 1020.1,
+        "advance_paid_amount": 100.0,
+        "pending_bill_amount": 920.1,
+        "booking_status": "pending",
+        "special_message": "Birthday celebration",
+        "comment": "Please arrange cake and decorations",
+        "menu_items": [
+          {
+            "menu_id": 11,
+            "menu_name": "Lemon Ricee",
+            "quantity": 10,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": "Extra spicy"
+          }
+        ],
+        "expected_datetime": "04 Jun 2025 04:24:00 AM"
+      },
+      {
+        "booking_id": 13,
+        "order_id": 1414,
+        "order_number": "1001",
+        "delivery_datetime": "05 Jun 2025 11:48:00 AM",
+        "booking_datetime": "05 Jun 2025 17:20:11 PM",
+        "customer_name": "Bxnxnxn",
+        "customer_mobile": "8695956595",
+        "total_bill_amount": 51.0,
+        "advance_paid_amount": 20.0,
+        "pending_bill_amount": 31.0,
+        "booking_status": "pending",
+        "special_message": "Hfhfjff",
+        "comment": "Hfhfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 1,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 11:48:00 AM"
+      },
+      {
+        "booking_id": 4,
+        "order_id": 1350,
+        "order_number": "1035",
+        "delivery_datetime": "05 Jun 2025 10:00:00 AM",
+        "booking_datetime": "05 Jun 2025 12:30:50 PM",
+        "customer_name": "Testing again",
+        "customer_mobile": "8549595995",
+        "total_bill_amount": 336.63,
+        "advance_paid_amount": 336.63,
+        "pending_bill_amount": 0.0,
+        "booking_status": "settled",
+        "special_message": "Nxjdjxh",
+        "comment": "Vdhdjdj",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 3,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          },
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "06 Jun 2025 09:00:00 AM"
+      },
+      {
+        "booking_id": 3,
+        "order_id": 1349,
+        "order_number": "1034",
+        "delivery_datetime": "05 Jun 2025 09:53:00 AM",
+        "booking_datetime": "05 Jun 2025 12:27:45 PM",
+        "customer_name": "Test it",
+        "customer_mobile": "9565656565",
+        "total_bill_amount": 51.0,
+        "advance_paid_amount": 49.98,
+        "pending_bill_amount": 1.02,
+        "booking_status": "pending",
+        "special_message": "Name on cake nothing",
+        "comment": "Less sweet ",
+        "menu_items": [
+          {
+            "menu_id": 51,
+            "menu_name": "testing menu",
+            "quantity": 1,
+            "price": 50.0,
+            "portion_name": "half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "07 Jun 2025 16:47:00 PM"
+      },
+      {
+        "booking_id": 12,
+        "order_id": 1385,
+        "order_number": "1002",
+        "delivery_datetime": "05 Jun 2025 09:37:00 AM",
+        "booking_datetime": "05 Jun 2025 15:08:07 PM",
+        "customer_name": "Create booking",
+        "customer_mobile": "9686565665",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 31.21,
+        "pending_bill_amount": 70.8,
+        "booking_status": "pending",
+        "special_message": "Bdjdj",
+        "comment": "Jdjfjf",
+        "menu_items": [
+          {
+            "menu_id": 55,
+            "menu_name": "Chicken tandoor",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 10:00:00 AM"
+      },
+      {
+        "booking_id": 11,
+        "order_id": 1384,
+        "order_number": "1001",
+        "delivery_datetime": "05 Jun 2025 09:34:00 AM",
+        "booking_datetime": "05 Jun 2025 15:05:11 PM",
+        "customer_name": "Bakskxjx",
+        "customer_mobile": "6898989865",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 50.0,
+        "pending_bill_amount": 52.01,
+        "booking_status": "pending",
+        "special_message": "",
+        "comment": "",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 10:00:00 AM"
+      },
+      {
+        "booking_id": 10,
+        "order_id": 1381,
+        "order_number": "1066",
+        "delivery_datetime": "05 Jun 2025 09:28:00 AM",
+        "booking_datetime": "05 Jun 2025 14:59:26 PM",
+        "customer_name": "Cbjdjd",
+        "customer_mobile": "6565656566",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "pending",
+        "special_message": "",
+        "comment": "",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 09:45:00 AM"
+      },
+      {
+        "booking_id": 9,
+        "order_id": 1380,
+        "order_number": "1065",
+        "delivery_datetime": "05 Jun 2025 09:25:00 AM",
+        "booking_datetime": "05 Jun 2025 14:56:21 PM",
+        "customer_name": "Xbndjd",
+        "customer_mobile": "6898956868",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "pending",
+        "special_message": "Hdhd",
+        "comment": "Bfjfjjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 09:30:00 AM"
+      },
+      {
+        "booking_id": 8,
+        "order_id": 1358,
+        "order_number": "1043",
+        "delivery_datetime": "05 Jun 2025 07:43:00 AM",
+        "booking_datetime": "05 Jun 2025 13:15:29 PM",
+        "customer_name": "Bdbbd",
+        "customer_mobile": "7879898698",
+        "total_bill_amount": 183.62,
+        "advance_paid_amount": 0.0,
+        "pending_bill_amount": 183.62,
+        "booking_status": "cancelled",
+        "special_message": "Bxhx",
+        "comment": "Hchf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 180.0,
+            "portion_name": "Full",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 07:43:00 AM"
+      },
+      {
+        "booking_id": 6,
+        "order_id": 1354,
+        "order_number": "1039",
+        "delivery_datetime": "05 Jun 2025 07:30:00 AM",
+        "booking_datetime": "05 Jun 2025 13:01:53 PM",
+        "customer_name": "Hdjfjf",
+        "customer_mobile": "9565656566",
+        "total_bill_amount": 102.01,
+        "advance_paid_amount": 102.01,
+        "pending_bill_amount": 0.0,
+        "booking_status": "pending",
+        "special_message": "Bcncjf",
+        "comment": "Hffjfjfjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 1,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "06 Jun 2025 11:30:00 AM"
+      },
+      {
+        "booking_id": 14,
+        "order_id": 1420,
+        "order_number": "1002",
+        "delivery_datetime": "05 Jun 2025 07:05:00 AM",
+        "booking_datetime": "05 Jun 2025 18:06:05 PM",
+        "customer_name": "Notifications ",
+        "customer_mobile": "9868686989",
+        "total_bill_amount": 204.02,
+        "advance_paid_amount": 50.0,
+        "pending_bill_amount": 154.02,
+        "booking_status": "pending",
+        "special_message": "Bcbcjcn",
+        "comment": "Fjjfjjf",
+        "menu_items": [
+          {
+            "menu_id": 14,
+            "menu_name": "Lemon Ricee",
+            "quantity": 2,
+            "price": 100.0,
+            "portion_name": "Half",
+            "special_note": ""
+          }
+        ],
+        "expected_datetime": "05 Jun 2025 13:21:00 PM"
+      }
+    ]
+  }
+}, 200</td>
+<td></td>
+<td>0</td>
+<td>com.menumitratCommonAPITestScript.ListViewBookingTestScript@23348b5d</td></tr>
+<tr>
+<td title='com.menumitratCommonAPITestScript.ViewBookingTestScript.bookingViewTest()'><b>bookingViewTest</b><br>Test class: com.menumitratCommonAPITestScript.ViewBookingTestScript<br>Parameters: bookingview, bookingview_001, positive, Verify, post, {
+    "outlet_id":1,
+    "booking_id":101,
+    "app_source":"owner_app"
+}, {
+  "detail": "Booking details retrieved successfully",
+  "data": {
+    "booking_id": 101,
+    "order_id": 5244,
+    "delivery_datetime": "2025-06-10 14:00:00",
+    "booking_datetime": "2025-06-26 12:23:40",
+    "customer_name": "John Doe",
+    "customer_mobile": "9876543210",
+    "total_bill_amount": 204.02,
+    "advance_paid_amount": 100.0,
+    "pending_bill_amount": 104.02,
+    "status": "pending",
+    "menu_items": [
+      {
+        "menu_id": 56,
+        "menu_name": "Chicken tandoor",
+        "quantity": 2,
+        "price": 100.0,
+        "portion_name": "Half",
+        "special_note": "Extra spicy"
+      }
+    ],
+    "special_message": "Birthday celebration",
+    "comment": "Please arrange cake and decorations"
+  }
+}, 200</td>
+<td></td>
+<td>0</td>
+<td>com.menumitratCommonAPITestScript.ViewBookingTestScript@70325e14</td></tr>
 </table><p>
 </body>
 </html>

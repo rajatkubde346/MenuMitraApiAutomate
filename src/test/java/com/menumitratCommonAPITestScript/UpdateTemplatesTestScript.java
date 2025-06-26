@@ -156,67 +156,64 @@ public class UpdateTemplatesTestScript extends APIBase
             ExtentReport.getTest().log(Status.INFO, "Starting update templates test: " + description);
             ExtentReport.getTest().log(Status.INFO, "Base URI: " + baseUri);
 
-            if (apiName.equalsIgnoreCase("updatetemplates") && testType.equalsIgnoreCase("positive")) {
-                LogUtils.info("Processing update templates request");
-                requestBodyJson = new JSONObject(requestBody.replace("\\", "\\\\"));
-                
-                System.out.println("Access Token: " + accessToken);
-                
-                request = RestAssured.given();
-                request.header("Authorization", "Bearer " + accessToken);
-                request.header("Content-Type", "multipart/form-data");
+            LogUtils.info("Processing update templates request");
+            requestBodyJson = new JSONObject(requestBody.replace("\\", "\\\\"));
+            
+            System.out.println("Access Token: " + accessToken);
+            
+            request = RestAssured.given();
+            request.header("Authorization", "Bearer " + accessToken);
+            request.header("Content-Type", "multipart/form-data");
 
-                // Set multipart form data
-                if (requestBodyJson.has("template_id")) {
-                    request.multiPart("template_id", requestBodyJson.getInt("template_id"));
-                }
-                
-                if (requestBodyJson.has("name")) {
-                    request.multiPart("name", requestBodyJson.getString("name"));
-                }
-                
-                if (requestBodyJson.has("qr_overlay_position")) {
-                    request.multiPart("qr_overlay_position", requestBodyJson.getString("qr_overlay_position"));
-                }
-                
-                if (requestBodyJson.has("image") && !requestBodyJson.getString("image").isEmpty())
+            // Set multipart form data
+            if (requestBodyJson.has("template_id")) {
+                request.multiPart("template_id", requestBodyJson.getInt("template_id"));
+            }
+            
+            if (requestBodyJson.has("name")) {
+                request.multiPart("name", requestBodyJson.getString("name"));
+            }
+            
+            if (requestBodyJson.has("qr_overlay_position")) {
+                request.multiPart("qr_overlay_position", requestBodyJson.getString("qr_overlay_position"));
+            }
+            
+            if (requestBodyJson.has("image") && !requestBodyJson.getString("image").isEmpty())
+            {
+                File templateImage = new File(requestBodyJson.getString("image"));
+                if(templateImage.exists())
                 {
-                    File templateImage = new File(requestBodyJson.getString("image"));
-                    if(templateImage.exists())
-                    {
-                        request.multiPart("image", templateImage);
-                    }
-                }
-                
-                LogUtils.info("Constructing request body");
-                ExtentReport.getTest().log(Status.INFO, "Constructing request body");
-                LogUtils.info("Sending PUT request to endpoint: " + baseUri);
-                ExtentReport.getTest().log(Status.INFO, "Sending PUT request to update template");
-                
-                response = request.when().patch(baseUri).then().extract().response();
-
-                LogUtils.info("Received response with status code: " + response.getStatusCode());
-                ExtentReport.getTest().log(Status.INFO, "Received response with status code: " + response.getStatusCode());
-                LogUtils.info("Response body: " + response.asPrettyString());
-                ExtentReport.getTest().log(Status.INFO, "Response body: " + response.asPrettyString());
-                
-                if (response.getStatusCode() == 200) 
-                {
-                    LogUtils.success(logger, "Template updated successfully");
-                    ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Template updated successfully", ExtentColor.GREEN));
-                    LogUtils.info("Response received successfully");
-                    ExtentReport.getTest().log(Status.PASS, "Response received successfully");
-                    ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asPrettyString());
-                } 
-                else 
-                {
-                    LogUtils.failure(logger, "Template update failed with status code: " + response.getStatusCode());
-                    LogUtils.error("Response body: " + response.asPrettyString());
-                    ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Template update failed", ExtentColor.RED));
-                    ExtentReport.getTest().log(Status.FAIL, "Response Body: " + response.asPrettyString());
+                    request.multiPart("image", templateImage);
                 }
             }
+            
+            LogUtils.info("Constructing request body");
+            ExtentReport.getTest().log(Status.INFO, "Constructing request body");
+            LogUtils.info("Sending PUT request to endpoint: " + baseUri);
+            ExtentReport.getTest().log(Status.INFO, "Sending PUT request to update template");
+            
+            response = request.when().patch(baseUri).then().extract().response();
 
+            LogUtils.info("Received response with status code: " + response.getStatusCode());
+            ExtentReport.getTest().log(Status.INFO, "Received response with status code: " + response.getStatusCode());
+            LogUtils.info("Response body: " + response.asPrettyString());
+            ExtentReport.getTest().log(Status.INFO, "Response body: " + response.asPrettyString());
+            
+            if (response.getStatusCode() == 200) 
+            {
+                LogUtils.success(logger, "Template updated successfully");
+                ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Template updated successfully", ExtentColor.GREEN));
+                LogUtils.info("Response received successfully");
+                ExtentReport.getTest().log(Status.PASS, "Response received successfully");
+                ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asPrettyString());
+            } 
+            else 
+            {
+                LogUtils.failure(logger, "Template update failed with status code: " + response.getStatusCode());
+                LogUtils.error("Response body: " + response.asPrettyString());
+                ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Template update failed", ExtentColor.RED));
+                ExtentReport.getTest().log(Status.FAIL, "Response Body: " + response.asPrettyString());
+            }
         } catch (Exception e) {
             LogUtils.error("Error during update templates test execution: " + e.getMessage());
             ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Test execution failed", ExtentColor.RED));

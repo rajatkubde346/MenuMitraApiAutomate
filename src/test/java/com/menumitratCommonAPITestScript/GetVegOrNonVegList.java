@@ -155,13 +155,13 @@ public class GetVegOrNonVegList extends APIBase
                 if (row != null && row.length >= 3 &&
                         "getvegornonveglist".equalsIgnoreCase(Objects.toString(row[0], "")) &&
                         "positive".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-
+                    // Only add positive test cases
                     filteredData.add(row);
                 }
             }
 
             if (filteredData.isEmpty()) {
-                String errorMsg = "No valid veg or non-veg list test data found after filtering";
+                String errorMsg = "No valid veg or non-veg list positive test data found after filtering";
                 LogUtils.failure(logger, errorMsg);
                 ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
                 throw new customException(errorMsg);
@@ -172,8 +172,8 @@ public class GetVegOrNonVegList extends APIBase
                 obj[i] = filteredData.get(i);
             }
 
-            LogUtils.info("Successfully retrieved " + obj.length + " veg or non-veg list test scenarios");
-            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " veg or non-veg list test scenarios");
+            LogUtils.info("Successfully retrieved " + obj.length + " veg or non-veg list positive test scenarios");
+            ExtentReport.getTest().log(Status.PASS, "Successfully retrieved " + obj.length + " veg or non-veg list positive test scenarios");
             return obj;
         } catch (Exception e) {
             String errorMsg = "Error in getVegOrNonVegListData: " + e.getMessage();

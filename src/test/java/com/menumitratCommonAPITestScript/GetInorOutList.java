@@ -103,7 +103,7 @@ public class GetInorOutList extends APIBase {
             }
 
             if (filteredData.isEmpty()) {
-                String errorMsg = "No valid in or out list test data found after filtering";
+                String errorMsg = "No valid in or out list positive test data found after filtering";
                 LogUtils.error(errorMsg);
                 throw new customException(errorMsg);
             }
@@ -113,7 +113,7 @@ public class GetInorOutList extends APIBase {
                 obj[i] = filteredData.get(i);
             }
 
-            LogUtils.info("Successfully retrieved " + obj.length + " in or out list test scenarios");
+            LogUtils.info("Successfully retrieved " + obj.length + " in or out list positive test scenarios");
             return obj;
         } catch (Exception e) {
             LogUtils.error("Error while reading in or out list test scenario data from Excel sheet: " + e.getMessage());

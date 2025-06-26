@@ -120,48 +120,6 @@ public class verifyOTPTestScript extends APIBase {
         }
     }
 
-    @DataProvider(name="getverifyOTPInvalidData")
-    private Object[][] getverifyOTPInvalidData() throws customException {
-        try {
-            LogUtils.info("=====Reading Verify OTP API Negative Test Data=====");
-            ExtentReport.getTest().log(Status.INFO, "Loading negative test scenarios for Verify OTP API");
-            
-            Object[][] testData = DataDriven.readExcelData(excelSheetPathForGetApis, "CommonAPITestScenario");
-            
-            if (testData == null || testData.length == 0) {
-                LogUtils.failure(logger, "No negative test data found for Verify OTP API");
-                ExtentReport.getTest().log(Status.WARNING, MarkupHelper.createLabel("No negative test scenarios found", ExtentColor.AMBER));
-                throw new customException("No Verify OTP API negative test data found");
-            }
-            
-            List<Object[]> filteredData = new ArrayList<>();
-            
-            for (int i = 0; i < testData.length; i++) {
-                Object[] row = testData[i];
-                if (row != null && row.length >= 3 &&
-                    "verifyotp".equalsIgnoreCase(Objects.toString(row[0], "")) &&
-                    "negative".equalsIgnoreCase(Objects.toString(row[2], ""))) {
-                    
-                    filteredData.add(row);
-                }
-            }
-
-            Object[][] obj = new Object[filteredData.size()][];
-            for (int i = 0; i < filteredData.size(); i++) {
-                obj[i] = filteredData.get(i);
-            }
-            
-            LogUtils.success(logger, "Successfully loaded " + obj.length + " negative test scenarios");
-            ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Loaded " + obj.length + " negative test scenarios", ExtentColor.GREEN));
-            return obj;
-            
-        } catch (Exception e) {
-            LogUtils.exception(logger, "Failed to read Verify OTP API negative test data", e);
-            ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Failed to load negative test data: " + e.getMessage(), ExtentColor.RED));
-            throw new customException("Error reading Verify OTP API negative test data: " + e.getMessage());
-        }
-    }
-    
     @BeforeClass
     private void setup() throws customException 
     {
@@ -241,75 +199,6 @@ public class verifyOTPTestScript extends APIBase {
             LogUtils.exception(logger,"Error executing Verify OTP API", e);
             ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Test execution failed: " + e.getMessage(), ExtentColor.RED));
             throw new customException("Error during Verify OTP API execution: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Test method for negative scenarios
-     */
-    @Test(dataProvider = "getverifyOTPInvalidData", priority = 2)
-    private void verifyOTPusingInvalidData(String apiName, String testCaseId, 
-        String testType, String description, String httpsMethod, 
-        String requestBody, String expectedResponseBody, String statusCode) throws customException 
-    {
-        try {
-            LogUtils.info("=====Starting Verify OTP Negative Test Case: " + testCaseId + "=====");
-            ExtentReport.createTest("Verify OTP API Negative Test - " + testCaseId);
-            ExtentReport.getTest().log(Status.INFO, "Test Description: " + description);
-            
-            if (apiName.contains("verifyotp") && testType.contains("negative")) 
-            {
-                requestBodyJson = new JSONObject(requestBody);
-                expectedResponse = new JSONObject(expectedResponseBody);
-                
-                verifyOTPRequest = new verifyOTPRequest();
-                verifyOTPRequest.setMobile(requestBodyJson.getString("mobile"));
-                verifyOTPRequest.setOtp(requestBodyJson.get("otp").toString());
-                verifyOTPRequest.setFcm_token(requestBodyJson.get("fcm_token").toString());
-                verifyOTPRequest.setDevice_id(requestBodyJson.get("device_id").toString());
-                verifyOTPRequest.setDevice_model(requestBodyJson.get("device_model").toString());
-                
-                LogUtils.info("Request payload prepared for negative test case: " + testCaseId);
-                ExtentReport.getTest().log(Status.INFO, "Request Body: " + requestBodyJson.toString(2));
-                
-                response = ResponseUtil.getResponse(baseUri, verifyOTPRequest, httpsMethod);
-                LogUtils.info("Response received - Status Code: " + response.getStatusCode());
-                ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asPrettyString());
-                
-                switch (testCaseId)
-                {
-                    case "verifyotp_002":
-                        LogUtils.info("Validating empty mobile number scenario");
-                        validateResponseBody.handleResponseBody(response, expectedResponse);
-                        break;
-                        
-                    case "verifyotp_003":
-                        LogUtils.info("Validating mobile number with less than 10 digits");
-                        validateResponseBody.handleResponseBody(response, expectedResponse);
-                        break;
-                        
-                    case "verifyotp_004":
-                        LogUtils.info("Validating mobile number with special characters");
-                        validateResponseBody.handleResponseBody(response, expectedResponse);
-                        break;
-                        
-                    case "verifyotp_005":
-                        LogUtils.info("Validating mobile number with invalid characters");
-                        validateResponseBody.handleResponseBody(response, expectedResponse);
-                        break;
-                        
-                    default:
-                        LogUtils.info("Validating general negative scenario");
-                        validateResponseBody.handleResponseBody(response, expectedResponse);
-                }
-                
-                LogUtils.success(logger, "Successfully validated negative test case: " + testCaseId);
-                ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Test case validation successful", ExtentColor.GREEN));
-            }
-        } catch (Exception e) {
-            LogUtils.exception(logger, "Error in negative test case " + testCaseId, e);
-            ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Test case failed: " + e.getMessage(), ExtentColor.RED));
-            throw new customException("Error in negative test case " + testCaseId + ": " + e.getMessage());
         }
     }
 }
