@@ -228,8 +228,6 @@ public class EbillUrlTestScript extends APIBase {
         }
     }
 
-<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitratCommonAPITestScript/EbillUrlTestScript.java
-=======
     /**
      * Test method for negative test cases
      */
@@ -313,7 +311,6 @@ public class EbillUrlTestScript extends APIBase {
         }
     }
 
->>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitratCommonAPITestScript/EbillUrlTestScript.java
     private void tearDown() {
         try {
             LogUtils.info("===Test environment tear down started===");

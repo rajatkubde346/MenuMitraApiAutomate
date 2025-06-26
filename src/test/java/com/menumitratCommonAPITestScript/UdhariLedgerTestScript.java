@@ -185,14 +185,11 @@ public class UdhariLedgerTestScript extends APIBase {
                 udhariLedgerRequest.setOrderId(requestBodyJson.getLong("order_id"));
                 udhariLedgerRequest.setBillAmount(requestBodyJson.getDouble("bill_amount"));
                 udhariLedgerRequest.setEstimatedSettlementPeriod(requestBodyJson.getString("estimated_settlement_period"));
-<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitratCommonAPITestScript/UdhariLedgerTestScript.java
                 if (requestBodyJson.has("app_source")) {
                     udhariLedgerRequest.setApp_source(requestBodyJson.getString("app_source"));
                 } else {
                     udhariLedgerRequest.setApp_source("default_source");
                 }
-=======
->>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitratCommonAPITestScript/UdhariLedgerTestScript.java
 
                 LogUtils.info("Request Body: " + requestBodyJson.toString());
                 ExtentReport.getTest().log(Status.INFO, "Request Body: " + requestBodyJson.toString());

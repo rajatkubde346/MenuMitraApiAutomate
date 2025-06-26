@@ -8,10 +8,7 @@ public class UdhariLedgerRequest {
     private Long orderId;
     private Double billAmount;
     private String estimatedSettlementPeriod;
-<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitra/apiRequest/UdhariLedgerRequest.java
     private String app_source;
-=======
->>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitra/apiRequest/UdhariLedgerRequest.java
 
     public Long getUserId() {
         return userId;
@@ -68,7 +65,6 @@ public class UdhariLedgerRequest {
     public void setEstimatedSettlementPeriod(String estimatedSettlementPeriod) {
         this.estimatedSettlementPeriod = estimatedSettlementPeriod;
     }
-<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitra/apiRequest/UdhariLedgerRequest.java
 
     public String getApp_source() {
         return app_source;
@@ -77,6 +73,4 @@ public class UdhariLedgerRequest {
     public void setApp_source(String app_source) {
         this.app_source = app_source;
     }
-=======
->>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitra/apiRequest/UdhariLedgerRequest.java
 }

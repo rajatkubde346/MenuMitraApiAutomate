@@ -254,10 +254,7 @@ public class GetAllMenuListByCategory extends APIBase {
             throw new customException(errorMsg);
         }
     }
-<<<<<<< HEAD:MenuMitraApiAutomates/src/test/java/com/menumitratCommonAPITestScript/GetAllMenuListByCategory.java
-=======
-    
-    
+
     @DataProvider(name = "getGetAllMenuListByCategoryNegativeData")
     public Object[][] getGetAllMenuListByCategoryNegativeData() throws customException {
         try {
@@ -422,5 +419,4 @@ public class GetAllMenuListByCategory extends APIBase {
             throw new customException(errorMsg);
         }
     }
->>>>>>> d78fd762415b0f4fcad81a4a45edc1fbc54b8248:src/test/java/com/menumitratCommonAPITestScript/GetAllMenuListByCategory.java
 }
