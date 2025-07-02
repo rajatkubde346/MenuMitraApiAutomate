@@ -1,31 +1,63 @@
 package com.menumitra.apiRequest;
 
+import java.io.File;
+
 public class MenuCategoryRequest {
-    private String outlet_id;
-    private String menu_cat_id;
-    private String user_id;
-    
-    public String getOutlet_id() {
-        return outlet_id;
+    private int outletId;
+    private String categoryName;
+    private File image;
+    private String userId;
+
+    // Constructor
+    public MenuCategoryRequest(int outletId, String categoryName, String userId) {
+        this.outletId = outletId;
+        this.categoryName = categoryName;
+        this.userId = userId;
     }
-    
-    public void setOutlet_id(String outlet_id) {
-        this.outlet_id = outlet_id;
+
+    // Getters and Setters
+    public int getOutletId() {
+        return outletId;
     }
-    
-    public String getMenu_cat_id() {
-        return menu_cat_id;
+
+    public void setOutletId(int outletId) {
+        this.outletId = outletId;
     }
-    
-    public void setMenu_cat_id(String menu_cat_id) {
-        this.menu_cat_id = menu_cat_id;
+
+    public String getCategoryName() {
+        return categoryName;
     }
-    
-    public String getUser_id() {
-        return user_id;
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
-    
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+
+    public File getImage() {
+        return image;
+    }
+
+    public void setImage(File image) {
+        this.image = image;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    // Builder pattern for optional image
+    public MenuCategoryRequest withImage(File image) {
+        this.image = image;
+        return this;
+    }
+
+    public MenuCategoryRequest withImage(String imagePath) {
+        if (imagePath != null && !imagePath.isEmpty()) {
+            this.image = new File(imagePath);
+        }
+        return this;
     }
 }

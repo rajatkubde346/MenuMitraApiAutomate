@@ -1,6 +1,7 @@
 package com.menumitra.apiRequest;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class MenuRequest 
 {
@@ -177,5 +178,102 @@ public class MenuRequest
     
     public void setApp_source(String app_source) {
         this.app_source = app_source;
+    }
+    
+    // Static method to create a sample menu request
+    public static MenuRequest createSampleMenuRequest() {
+        MenuRequest request = new MenuRequest();
+        
+        // Set basic fields
+        request.setOutlet_id(96);
+        request.setMenu_cat_id("452");
+        request.setUser_id("136");
+        request.setName("dosa");
+        request.setFood_type("veg");
+        request.setDescription("this healthy food");
+        request.setSpicy_index("2");
+        
+        // Create portion data
+        List<PortionData> portionDataList = new ArrayList<>();
+        
+        // First portion - Half
+        PortionData halfPortion = new PortionData();
+        halfPortion.setPortion_name("Half");
+        halfPortion.setPrice(200);
+        halfPortion.setUnit_value("250");
+        halfPortion.setUnit_type("gm");
+        halfPortion.setFlag(1);
+        
+        // Second portion - Full
+        PortionData fullPortion = new PortionData();
+        fullPortion.setPortion_name("Full");
+        fullPortion.setPrice(450);
+        fullPortion.setUnit_value("500");
+        fullPortion.setUnit_type("gm");
+        fullPortion.setFlag(0);
+        
+        // Add portions to list
+        portionDataList.add(halfPortion);
+        portionDataList.add(fullPortion);
+        
+        // Set portion data to request
+        request.setPortion_data(portionDataList);
+        
+        // Set remaining fields
+        request.setImages("data:image/png;base64,YOUR_BASE64_STRING_HERE");
+        request.setIngredients("dal,vegetables");
+        request.setOffer("40");
+        request.setRating("5.0");
+        request.setApp_source("owner_app");
+        
+        return request;
+    }
+
+    public static MenuRequest createSpecificMenuRequest() {
+        MenuRequest request = new MenuRequest();
+        
+        // Set basic fields
+        request.setOutlet_id(96);
+        request.setMenu_cat_id("452");
+        request.setUser_id("136");
+        request.setName("dosa");
+        request.setFood_type("veg");
+        request.setDescription("this healthy food");
+        request.setSpicy_index("2");
+        
+        // Create portion data
+        List<PortionData> portionDataList = new ArrayList<>();
+        
+        // First portion - Half
+        PortionData halfPortion = new PortionData();
+        halfPortion.setPortion_name("Half");
+        halfPortion.setPrice(200);
+        halfPortion.setUnit_value("250");
+        halfPortion.setUnit_type("gm");
+        halfPortion.setFlag(1);
+        
+        // Second portion - Full
+        PortionData fullPortion = new PortionData();
+        fullPortion.setPortion_name("Full");
+        fullPortion.setPrice(450);
+        fullPortion.setUnit_value("500");
+        fullPortion.setUnit_type("gm");
+        fullPortion.setFlag(0);
+        
+        // Add portions to list
+        portionDataList.add(halfPortion);
+        portionDataList.add(fullPortion);
+        
+        // Set portion data to request
+        request.setPortion_data(portionDataList);
+        
+        // Set remaining fields
+        request.setImages("data:image/png;base64,YOUR_BASE64_STRING_HERE");
+        request.setIngredients("dal,vegetables");
+        request.setOffer("40");
+        request.setRating("5.0");
+        request.setApp_source("owner_app");
+        
+        return request;
     }
 }

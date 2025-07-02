@@ -193,20 +193,35 @@ public class MenuCreateTestScript extends APIBase {
             ExtentReport.createTest("Menu Creation Test - " + testCaseid);
             ExtentReport.getTest().log(Status.INFO, "Test Description: " + description);
             
-            expectedResponse=new JSONObject(expectedResponseBody);
+            try {
+                LogUtils.info("Parsing expected response JSON");
+                expectedResponse = new JSONObject(expectedResponseBody);
+            } catch (Exception e) {
+                LogUtils.error("Failed to parse expected response JSON: " + e.getMessage());
+                LogUtils.error("Expected response body: " + expectedResponseBody);
+                throw new customException("Failed to parse expected response JSON: " + e.getMessage());
+            }
 
-            requestBodyJson=new JSONObject(requestBodyPayload.replace("\\","\\\\"));
+            try {
+                LogUtils.info("Parsing request body JSON");
+                requestBodyJson = new JSONObject(requestBodyPayload.replace("\\\\", "\\"));
+                LogUtils.info("Successfully parsed request body JSON");
+            } catch (Exception e) {
+                LogUtils.error("Failed to parse request body JSON: " + e.getMessage());
+                LogUtils.error("Request body payload: " + requestBodyPayload);
+                throw new customException("Failed to parse request body JSON: " + e.getMessage());
+            }
       
-            request=RestAssured.given();
+            request = RestAssured.given();
             request.header("Authorization", "Bearer " + accessToken);
             request.contentType("multipart/form-data");
             		
             if(requestBodyJson.has("images") && !requestBodyJson.getString("images").isEmpty()) {
                 LogUtils.info("Processing image attachments");
-                File imageFile=new File(requestBodyJson.getString("images"));
+                File imageFile = new File(requestBodyJson.getString("images"));
                 if(imageFile.exists()) {
-                    for(int i=0;i<5;i++) {
-                        request.multiPart("images",imageFile);
+                    for(int i=0; i<5; i++) {
+                        request.multiPart("images", imageFile);
                     }
                     LogUtils.info("Successfully attached 5 image files");
                     ExtentReport.getTest().log(Status.INFO, "Successfully attached 5 image files");
@@ -219,28 +234,34 @@ public class MenuCreateTestScript extends APIBase {
             LogUtils.info("Setting up request form parameters");
             ExtentReport.getTest().log(Status.INFO, "Setting up request form parameters");
             
-            request.multiPart("user_id", userId);
-            request.multiPart("outlet_id", requestBodyJson.getString("outlet_id")); 
-            request.multiPart("menu_cat_id", requestBodyJson.getString("menu_cat_id"));
-            request.multiPart("name", requestBodyJson.getString("name"));
-            request.multiPart("food_type", requestBodyJson.getString("food_type"));
-            request.multiPart("description", requestBodyJson.getString("description"));
-            request.multiPart("spicy_index", requestBodyJson.getString("spicy_index"));
-            request.multiPart("portion_data", requestBodyJson.getJSONArray("portion_data").toString());
-            request.multiPart("ingredients", requestBodyJson.getString("ingredients"));
-            request.multiPart("offer", requestBodyJson.getString("offer"));
-            request.multiPart("rating", requestBodyJson.getString("rating")); 
-            request.multiPart("cgst", requestBodyJson.getString("cgst"));
-            request.multiPart("sgst", requestBodyJson.getString("sgst"));
+            try {
+                request.multiPart("user_id", userId);
+                request.multiPart("outlet_id", requestBodyJson.getString("outlet_id")); 
+                request.multiPart("menu_cat_id", requestBodyJson.getString("menu_cat_id"));
+                request.multiPart("name", requestBodyJson.getString("name"));
+                request.multiPart("food_type", requestBodyJson.getString("food_type"));
+                request.multiPart("description", requestBodyJson.getString("description"));
+                request.multiPart("spicy_index", requestBodyJson.getString("spicy_index"));
+                request.multiPart("portion_data", requestBodyJson.getJSONArray("portion_data").toString());
+                request.multiPart("ingredients", requestBodyJson.getString("ingredients"));
+                request.multiPart("offer", requestBodyJson.getString("offer"));
+                request.multiPart("rating", requestBodyJson.getString("rating")); 
+                request.multiPart("cgst", requestBodyJson.getString("cgst"));
+                request.multiPart("sgst", requestBodyJson.getString("sgst"));
+                LogUtils.info("Successfully set all form parameters");
+            } catch (Exception e) {
+                LogUtils.error("Failed to set form parameters: " + e.getMessage());
+                throw new customException("Failed to set form parameters: " + e.getMessage());
+            }
             		
             LogUtils.info("Sending POST request to endpoint: " + baseUri);
             ExtentReport.getTest().log(Status.INFO, "Sending POST request to create menu item");
-            response=request.when().post(baseUri).then().extract().response();
+            response = request.when().post(baseUri).then().extract().response();
             
             LogUtils.info("Received response with status code: " + response.getStatusCode());
             LogUtils.info("Response body: " + response.asPrettyString());
             
-            if(response.getStatusCode()==200) {
+            if(response.getStatusCode() == 200) {
                 LogUtils.success(logger, "Menu item created successfully");
                 ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Menu item created successfully", ExtentColor.GREEN));
                 //validateResponseBody.handleResponseBody(response, expectedResponse);

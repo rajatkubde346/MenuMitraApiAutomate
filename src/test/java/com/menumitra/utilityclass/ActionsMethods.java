@@ -34,8 +34,9 @@ public class ActionsMethods
 
 	        loginRequest login = new loginRequest();
 	        login.setMobile(APIBase.property.getProperty("mobile"));
-	        LogUtils.info("Login payload prepared with mobile: " + login.getMobile());
-	        ExtentReport.getTest().log(Status.INFO, "Login payload prepared with mobile: " + login.getMobile());
+	        login.setApp_type(APIBase.property.getProperty("app_type"));
+	        LogUtils.info("Login payload prepared with mobile: " + login.getMobile() + " and app_type: " + login.getApp_type());
+	        ExtentReport.getTest().log(Status.INFO, "Login payload prepared with mobile: " + login.getMobile() + " and app_type: " + login.getApp_type());
 
 	        response = ResponseUtil.getResponse(baseURI, login, APIBase.property.getProperty("httpmethod"));
 	        LogUtils.info("POST request executed for login API");
@@ -89,8 +90,9 @@ public class ActionsMethods
     		verifyotp.setFcm_token(APIBase.property.getProperty("fcm_token"));
     		verifyotp.setDevice_id(APIBase.property.getProperty("device_id"));
     		verifyotp.setDevice_model(APIBase.property.getProperty("device_model"));
-    		LogUtils.info("Verify OTP payload prepared with mobile: " + verifyotp.getMobile());
-    		ExtentReport.getTest().log(Status.INFO, "Verify OTP payload prepared with mobile: " + verifyotp.getMobile());
+    		verifyotp.setApp_type(APIBase.property.getProperty("app_type"));
+    		LogUtils.info("Verify OTP payload prepared with mobile: " + verifyotp.getMobile() + " and app_type: " + verifyotp.getApp_type());
+    		ExtentReport.getTest().log(Status.INFO, "Verify OTP payload prepared with mobile: " + verifyotp.getMobile() + " and app_type: " + verifyotp.getApp_type());
     		
     		response=ResponseUtil.getResponse(baseURI,verifyotp,APIBase.property.getProperty("httpmethod"));
     		LogUtils.info("POST request executed for Verify OTP API");

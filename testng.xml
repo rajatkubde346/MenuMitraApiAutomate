@@ -4,7 +4,7 @@
   <test name="Test">
     <classes>
       <class name="com.menumitra.superclass.APIBase"/>
-      <class name="com.menumitratCommonAPITestScript.TableListViewTestScript"/>
+<!--      <class name="com.menumitratCommonAPITestScript.TableListViewTestScript"/>
       <class name="com.menumitratCommonAPITestScript.ActivityLogTestScript"/>
       <class name="com.menumitratCommonAPITestScript.ChefViewTestScript"/>
       <class name="com.menumitratCommonAPITestScript.GetStaffListWithRole"/>
@@ -99,9 +99,10 @@
       <class name="com.menumitratCommonAPITestScript.ChefListViewTestScript"/>
       <class name="com.menumitratCommonAPITestScript.GetSpicyIndexList"/>
       
-      <class name="com.menumitratCommonAPITestScript.GetSupplierListTestScript"/>
-      <class name="com.menumitratCommonAPITestScript.MenuCreateTestScript"/>
-      <class name="com.menumitratCommonAPITestScript.InventoryCategoryCreate"/>
+      <class name="com.menumitratCommonAPITestScript.GetSupplierListTestScript"/>-->
+<!--      <class name="com.menumitratCommonAPITestScript.MenuCreateTestScript"/>-->
+      <!--<class name="com.menumitratCommonAPITestScript.MenuCategoryCreateTestScript"/>-->
+      <!--(Api Report)<class name="com.menumitratCommonAPITestScript.InventoryCategoryCreate"/>
       <class name="com.menumitratCommonAPITestScript.GetAllMenuListByCategory"/>
       <class name="com.menumitratCommonAPITestScript.StaffCreateTestScript"/>
       <class name="com.menumitratCommonAPITestScript.ResendOTPTestScript"/>
@@ -118,7 +119,7 @@
       <class name="com.menumitratCommonAPITestScript.SupplierDeleteTestScript"/>
       <class name="com.menumitratCommonAPITestScript.UpdateOutletTestScript"/>
       <class name="com.menumitratCommonAPITestScript.UpdateOrderTestScript"/>
-      <class name="com.menumitratCommonAPITestScript.MenuCategoryCreateTestScript"/>
+      
       <class name="com.menumitratCommonAPITestScript.StaffUpdateTestScript"/>
       <class name="com.menumitratCommonAPITestScript.GetTemplates"/>
       
@@ -171,7 +172,7 @@
        
        
 		
-			<class name="com.menumitratCommonAPITestScript.UdhariLedgerTestScript"/>
+	<class name="com.menumitratCommonAPITestScript.UdhariLedgerTestScript"/>
        <class name="com.menumitratCommonAPITestScript.UdhariLedgerUpdateTestScript"/>
        <class name="com.menumitratCommonAPITestScript.UdhariLedgerListTestScript"/>
        <class name="com.menumitratCommonAPITestScript.UdhariLedgerViewTestScript"/>
@@ -180,15 +181,26 @@
        <class name="com.menumitratCommonAPITestScript.InventoryViewTestScript"/>
        <class name="com.menumitratCommonAPITestScript.InventoryListViewTestScript"/>
       
-<!--      <class name="com.menumitratCommonAPITestScript.WareHouseCreateTestScript"/>-->
+      <class name="com.menumitratCommonAPITestScript.WareHouseCreateTestScript"/>
       
 		 <class name="com.menumitratCommonAPITestScript.WareHouseUpdateTestScript"/>
-		 <!--<class name="com.menumitratCommonAPITestScript.WareHouseDeleteTestScript"/>-->
+		 <class name="com.menumitratCommonAPITestScript.WareHouseDeleteTestScript"/>
 		 
 		 <class name="com.menumitratCommonAPITestScript.CreateBookingTestScript"/>
 		 <class name="com.menumitratCommonAPITestScript.ListViewBookingTestScript"/>
 		 <class name="com.menumitratCommonAPITestScript.ViewBookingTestScript"/>
-		 <class name="com.menumitratCommonAPITestScript.OrderPaymentSettleTestScript"/>
+	    <class name="com.menumitratCommonAPITestScript.OrderPaymentSettleTestScript"/>-->
+	    
+	    <!--<class name="com.menumitratCommonAPITestScript.outletCreateTestScript"/>-->
+	    <class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript"/>
+       
+        
+       
+	    
+	    
+	    
+	    
+	    
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -6,6 +6,7 @@ public class verifyOTPRequest {
 	String fcm_token;
 	String device_id;
 	String device_model;
+	String app_type;
 	
 
 	
@@ -50,7 +51,14 @@ public class verifyOTPRequest {
 		this.device_model = device_model;
 	}
 
-	
+	public String getApp_type() {
+		return app_type;
+	}
+
+	public void setApp_type(String app_type) {
+		this.app_type = app_type;
+	}
+
 	
 	
 

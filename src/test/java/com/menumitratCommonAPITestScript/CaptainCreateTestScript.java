@@ -236,6 +236,8 @@ public class CaptainCreateTestScript extends APIBase
                 ExtentReport.getTest().log(Status.FAIL, "Failed Response Body: " + response.asString());
             }
             throw new customException(errorMsg);
+            
+            
         }
     }
 }
