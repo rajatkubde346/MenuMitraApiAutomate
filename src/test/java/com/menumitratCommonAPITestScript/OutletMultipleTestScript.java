@@ -152,160 +152,97 @@ public class OutletMultipleTestScript extends APIBase {
     }
 
     @Test(dataProvider = "getOutletMultipleData")
-    public void outletMultipleTest(String apiName, String testCaseid, String testType, String description,
+    public void createMultipleOutletsTest(String apiName, String testCaseid, String testType, String description,
             String httpsmethod, String requestBody, String expectedResponseBody, String statusCode) throws customException {
         try {
-            LogUtils.info("Starting outlet multiple test case: " + testCaseid);
-            ExtentReport.createTest("Outlet Multiple Test - " + testCaseid);
+            LogUtils.info("Starting creation of multiple outlets");
+            ExtentReport.createTest("Create Multiple Outlets Test - " + testCaseid);
             ExtentReport.getTest().log(Status.INFO, "Test Description: " + description);
 
             if (apiName.equalsIgnoreCase("outletmultiple")) {
                 requestBodyJson = new JSONObject(requestBody);
+                int successCount = 0;
+                int totalOutlets = 2;  // Define total outlets to create
 
-                // Set owner_ids
-                int[] ownerIds = new int[requestBodyJson.getJSONArray("owner_ids").length()];
-                for (int i = 0; i < ownerIds.length; i++) {
-                    ownerIds[i] = requestBodyJson.getJSONArray("owner_ids").getInt(i);
+                for (int i = 1; i <= totalOutlets; i++) {
+                    LogUtils.info("Creating outlet #" + i);
+                    ExtentReport.getTest().log(Status.INFO, "Creating outlet #" + i);
+
+                    outletMultipleRequest = new OuletMultipleRequest();
+                    
+                    // Set owner_ids from Excel data
+                    int[] ownerIds = new int[requestBodyJson.getJSONArray("owner_ids").length()];
+                    for (int j = 0; j < ownerIds.length; j++) {
+                        ownerIds[j] = requestBodyJson.getJSONArray("owner_ids").getInt(j);
+                    }
+                    outletMultipleRequest.setOwner_ids(ownerIds);
+
+                    // Generate unique values for this outlet
+                    String uniqueMobile = String.format("9%09d", i);  // Creates a 10-digit number starting with 9
+                    String outletName = requestBodyJson.getString("name") + " " + i;
+                    String outletAddress = requestBodyJson.getString("address") + " " + i;
+                    
+                    // Set fields using Excel data and generated unique values
+                    outletMultipleRequest.setUser_id(String.valueOf(user_id));
+                    outletMultipleRequest.setName(outletName);
+                    outletMultipleRequest.setMobile(uniqueMobile);
+                    outletMultipleRequest.setAddress(outletAddress);
+                    outletMultipleRequest.setOutlet_type(requestBodyJson.getString("outlet_type"));
+                    outletMultipleRequest.setOutlet_mode(requestBodyJson.getString("outlet_mode"));
+                    outletMultipleRequest.setVeg_nonveg(requestBodyJson.getString("veg_nonveg"));
+                    outletMultipleRequest.setApp_type(requestBodyJson.getString("app_type"));
+                    outletMultipleRequest.setUpi_id(requestBodyJson.getString("upi_id"));
+
+                    // Create JSON for logging
+                    JSONObject currentRequestJson = new JSONObject();
+                    currentRequestJson.put("owner_ids", ownerIds);
+                    currentRequestJson.put("user_id", String.valueOf(user_id));
+                    currentRequestJson.put("name", outletName);
+                    currentRequestJson.put("mobile", uniqueMobile);
+                    currentRequestJson.put("address", outletAddress);
+                    currentRequestJson.put("outlet_type", requestBodyJson.getString("outlet_type"));
+                    currentRequestJson.put("outlet_mode", requestBodyJson.getString("outlet_mode"));
+                    currentRequestJson.put("veg_nonveg", requestBodyJson.getString("veg_nonveg"));
+                    currentRequestJson.put("app_type", requestBodyJson.getString("app_type"));
+                    currentRequestJson.put("upi_id", requestBodyJson.getString("upi_id"));
+
+                    LogUtils.info("Request Body for outlet #" + i + ": " + currentRequestJson.toString());
+                    ExtentReport.getTest().log(Status.INFO, "Request Body for outlet #" + i + ": " + currentRequestJson.toString());
+
+                    response = ResponseUtil.getResponseWithAuth(baseURI, outletMultipleRequest, httpsmethod, accessToken);
+
+                    LogUtils.info("Response Status Code for outlet #" + i + ": " + response.getStatusCode());
+                    LogUtils.info("Response Body for outlet #" + i + ": " + response.asString());
+                    ExtentReport.getTest().log(Status.INFO, "Response Status Code for outlet #" + i + ": " + response.getStatusCode());
+                    ExtentReport.getTest().log(Status.INFO, "Response Body for outlet #" + i + ": " + response.asString());
+
+                    // Validate status code - accept both 200 and 201
+                    int actualStatusCode = response.getStatusCode();
+                    if (actualStatusCode == 200 || actualStatusCode == 201) {
+                        successCount++;
+                        LogUtils.success(logger, "Successfully created outlet #" + i + " - " + outletName);
+                        ExtentReport.getTest().log(Status.PASS, "Successfully created outlet #" + i + " - " + outletName);
+                    } else {
+                        String errorMsg = "Failed to create outlet #" + i + " - Status code: " + actualStatusCode + ", Response: " + response.asString();
+                        LogUtils.failure(logger, errorMsg);
+                        ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
+                    }
+
+                    // Add a small delay between requests to prevent rate limiting
+                    Thread.sleep(2000);
                 }
-                outletMultipleRequest.setOwner_ids(ownerIds);
 
-                // Set other fields
-                outletMultipleRequest.setUser_id(String.valueOf(user_id));
-                outletMultipleRequest.setName(requestBodyJson.getString("name"));
-                outletMultipleRequest.setMobile(requestBodyJson.getString("mobile"));
-                outletMultipleRequest.setAddress(requestBodyJson.getString("address"));
-                outletMultipleRequest.setOutlet_type(requestBodyJson.getString("outlet_type"));
-                outletMultipleRequest.setOutlet_mode(requestBodyJson.getString("outlet_mode"));
-                outletMultipleRequest.setVeg_nonveg(requestBodyJson.getString("veg_nonveg"));
-                outletMultipleRequest.setApp_type(requestBodyJson.getString("app_type"));
-                outletMultipleRequest.setUpi_id(requestBodyJson.getString("upi_id"));
-
-                LogUtils.info("Request Body: " + requestBodyJson.toString());
-                ExtentReport.getTest().log(Status.INFO, "Request Body: " + requestBodyJson.toString());
-
-                response = ResponseUtil.getResponseWithAuth(baseURI, outletMultipleRequest, httpsmethod, accessToken);
-
-                LogUtils.info("Response Status Code: " + response.getStatusCode());
-                LogUtils.info("Response Body: " + response.asString());
-                ExtentReport.getTest().log(Status.INFO, "Response Status Code: " + response.getStatusCode());
-                ExtentReport.getTest().log(Status.INFO, "Response Body: " + response.asString());
-
-                // Validate status code - accept both 200 and 201
-                int actualStatusCode = response.getStatusCode();
-                if (actualStatusCode != 200 && actualStatusCode != 201) {
-                    String errorMsg = "Status code mismatch - Expected: 200 or 201, Actual: " + actualStatusCode;
+                // Final summary
+                String summaryMsg = "Created " + successCount + " out of " + totalOutlets + " outlets successfully";
+                if (successCount == totalOutlets) {
+                    LogUtils.success(logger, summaryMsg);
+                    ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel(summaryMsg, ExtentColor.GREEN));
+                } else {
+                    String errorMsg = summaryMsg + " - Some outlets failed to create";
                     LogUtils.failure(logger, errorMsg);
                     ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
                     throw new customException(errorMsg);
                 }
-
-                // Only show response without validation
-                actualJsonBody = new JSONObject(response.asString());
-                LogUtils.info("Outlet multiple response received successfully");
-                ExtentReport.getTest().log(Status.PASS, "Outlet multiple response received successfully");
-                ExtentReport.getTest().log(Status.PASS, "Response: " + response.asPrettyString());
-
-                LogUtils.success(logger, "Outlet multiple test completed successfully");
-                ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Outlet multiple test completed successfully", ExtentColor.GREEN));
-            }
-        } catch (Exception e) {
-            String errorMsg = "Error in outlet multiple test: " + e.getMessage();
-            LogUtils.exception(logger, errorMsg, e);
-            ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
-            if (response != null) {
-                ExtentReport.getTest().log(Status.FAIL, "Failed Response Status Code: " + response.getStatusCode());
-                ExtentReport.getTest().log(Status.FAIL, "Failed Response Body: " + response.asString());
-            }
-            throw new customException(errorMsg);
-        }
-    }
-
-    @Test
-    public void createMultipleOutletsTest() throws customException {
-        try {
-            LogUtils.info("Starting creation of 20 outlets");
-            ExtentReport.createTest("Create Multiple Outlets Test");
-            ExtentReport.getTest().log(Status.INFO, "Starting creation of 20 outlets");
-
-            int successCount = 0;
-            for (int i = 1; i <= 5; i++) {
-                LogUtils.info("Creating outlet #" + i);
-                ExtentReport.getTest().log(Status.INFO, "Creating outlet #" + i);
-
-                // Create request body for each outlet
-                outletMultipleRequest = new OuletMultipleRequest();
-                
-                // Set owner_ids (using a single owner ID for example)
-                int[] ownerIds = {user_id};  // You can modify this array as needed
-                outletMultipleRequest.setOwner_ids(ownerIds);
-
-                // Set other fields with dynamic values
-                String uniqueMobile = "98765432" + String.format("%02d", i);
-                String outletName = "Test Outlet " + i;
-                
-                outletMultipleRequest.setUser_id(String.valueOf(user_id));
-                outletMultipleRequest.setName(outletName);
-                outletMultipleRequest.setMobile(uniqueMobile);
-                outletMultipleRequest.setAddress("Test Address " + i);
-                outletMultipleRequest.setOutlet_type("restaurant");
-                outletMultipleRequest.setOutlet_mode("online");
-                outletMultipleRequest.setVeg_nonveg("veg");
-                outletMultipleRequest.setApp_type("pos");
-                outletMultipleRequest.setUpi_id("test.upi" + i + "@ybl");
-
-                // Convert request to JSON for logging
-                JSONObject requestJson = new JSONObject();
-                requestJson.put("owner_ids", ownerIds);
-                requestJson.put("user_id", String.valueOf(user_id));
-                requestJson.put("name", outletName);
-                requestJson.put("mobile", uniqueMobile);
-                requestJson.put("address", "Test Address " + i);
-                requestJson.put("outlet_type", "restaurant");
-                requestJson.put("outlet_mode", "online");
-                requestJson.put("veg_nonveg", "veg");
-                requestJson.put("app_type", "pos");
-                requestJson.put("upi_id", "test.upi" + i + "@ybl");
-
-                LogUtils.info("Request Body for outlet #" + i + ": " + requestJson.toString());
-                ExtentReport.getTest().log(Status.INFO, "Request Body for outlet #" + i + ": " + requestJson.toString());
-
-                // Send request
-                response = ResponseUtil.getResponseWithAuth(baseURI, outletMultipleRequest, "POST", accessToken);
-
-                // Log detailed response information
-                int statusCode = response.getStatusCode();
-                String responseBody = response.asString();
-                
-                LogUtils.info("Response Status Code for outlet #" + i + ": " + statusCode);
-                LogUtils.info("Response Body for outlet #" + i + ": " + responseBody);
-                ExtentReport.getTest().log(Status.INFO, "Response Status Code for outlet #" + i + ": " + statusCode);
-                ExtentReport.getTest().log(Status.INFO, "Response Body for outlet #" + i + ": " + responseBody);
-
-                // Validate status code - accept both 200 and 201
-                if (statusCode == 200 || statusCode == 201) {
-                    successCount++;
-                    LogUtils.success(logger, "Successfully created outlet #" + i + " - " + outletName);
-                    ExtentReport.getTest().log(Status.PASS, "Successfully created outlet #" + i + " - " + outletName);
-                } else {
-                    String errorMsg = "Failed to create outlet #" + i + " - Status code: " + statusCode + ", Response: " + responseBody;
-                    LogUtils.failure(logger, errorMsg);
-                    ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
-                }
-
-                // Add a small delay between requests to prevent rate limiting
-                Thread.sleep(2000);
-            }
-
-            // Final summary
-            String summaryMsg = "Created " + successCount + " out of 20 outlets successfully";
-            if (successCount == 20) {
-                LogUtils.success(logger, summaryMsg);
-                ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel(summaryMsg, ExtentColor.GREEN));
-            } else {
-                String errorMsg = summaryMsg + " - Some outlets failed to create";
-                LogUtils.failure(logger, errorMsg);
-                ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
-                throw new customException(errorMsg);
             }
         } catch (Exception e) {
             String errorMsg = "Error in creating multiple outlets: " + e.getMessage();

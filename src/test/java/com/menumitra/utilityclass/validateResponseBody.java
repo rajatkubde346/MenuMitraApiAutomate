@@ -136,30 +136,39 @@ public class validateResponseBody {
     {
         try
         {
-            ObjectMapper objectmapper=new ObjectMapper();
+            ObjectMapper objectmapper = new ObjectMapper();
             Map<String, Object> actualMap = objectmapper.readValue(actualResponse, Map.class);
             Map<String, Object> expectedMap = objectmapper.readValue(expectedResponse, Map.class);
              
-            boolean isMatched = actualMap.equals(expectedMap);
-            
-            if (isMatched) {
-                LogUtils.info("Success response matched as expected");
-                ExtentReport.getTest().log(Status.PASS, "Success response matched as expected");
-                ExtentReport.getTest().log(Status.PASS, "Expected response: " + expectedResponse);
-                ExtentReport.getTest().log(Status.PASS, "Actual response: " + actualResponse);
-            } else {
-                LogUtils.error("Actual response does not match expected response");
-                ExtentReport.getTest().log(Status.FAIL, "Mismatch in success response");
-                ExtentReport.getTest().log(Status.FAIL, "Expected response: " + expectedResponse);
-                ExtentReport.getTest().log(Status.FAIL, "Actual response: " + actualResponse);
-                throw new customException("Actual response does not match expected response");
+            // Check if all expected fields are present in actual response
+            for (Map.Entry<String, Object> entry : expectedMap.entrySet()) {
+                String key = entry.getKey();
+                Object expectedValue = entry.getValue();
+                
+                if (!actualMap.containsKey(key)) {
+                    LogUtils.error("Missing field in actual response: " + key);
+                    ExtentReport.getTest().log(Status.FAIL, "Missing field in actual response: " + key);
+                    throw new customException("Missing field in actual response: " + key);
+                }
+                
+                Object actualValue = actualMap.get(key);
+                if (!compareValues(actualValue, expectedValue)) {
+                    LogUtils.error("Value mismatch for field '" + key + "'. Expected: " + expectedValue + ", Actual: " + actualValue);
+                    ExtentReport.getTest().log(Status.FAIL, "Value mismatch for field '" + key + "'. Expected: " + expectedValue + ", Actual: " + actualValue);
+                    throw new customException("Value mismatch for field '" + key + "'");
+                }
             }
+
+            LogUtils.info("Success response matched as expected");
+            ExtentReport.getTest().log(Status.PASS, "Success response matched as expected");
+            ExtentReport.getTest().log(Status.PASS, "Expected response: " + expectedResponse);
+            ExtentReport.getTest().log(Status.PASS, "Actual response: " + actualResponse);
         }
         catch (AssertionError e) 
         {
             LogUtils.error("Success response validation failed: " + e.getMessage());
             ExtentReport.getTest().log(Status.FAIL, "Mismatch in success response:\nExpected response: " + expectedResponse + "\nActual response: " + actualResponse);
-            throw new customException("success response validate failed: "+e.getMessage());
+            throw new customException("Success response validation failed: " + e.getMessage());
         }
         catch (Exception e) 
         {
@@ -167,6 +176,32 @@ public class validateResponseBody {
             ExtentReport.getTest().log(Status.FAIL, "Exception while processing success response: " + e.getMessage());
             throw new customException("Error processing success response: " + e.getMessage());
         }
+    }
+
+    /**
+     * Helper method to compare values, handling different types and null values
+     */
+    private static boolean compareValues(Object actual, Object expected) {
+        if (actual == null && expected == null) {
+            return true;
+        }
+        if (actual == null || expected == null) {
+            return false;
+        }
+        
+        // Convert numbers to same type for comparison
+        if (actual instanceof Number && expected instanceof Number) {
+            double actualDouble = ((Number) actual).doubleValue();
+            double expectedDouble = ((Number) expected).doubleValue();
+            return Math.abs(actualDouble - expectedDouble) < 0.0001; // Small epsilon for floating point comparison
+        }
+        
+        // Convert to strings for case-insensitive comparison of string values
+        if (actual instanceof String && expected instanceof String) {
+            return ((String) actual).equalsIgnoreCase((String) expected);
+        }
+        
+        return actual.equals(expected);
     }
 
     /**

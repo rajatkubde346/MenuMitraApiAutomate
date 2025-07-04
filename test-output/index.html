@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,28 +102,14 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.OutletMultipleTestScript" class="method navigator-link" hash-for-method="createMultipleOutletsTest">createMultipleOutletsTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.OutletListViewTestScript" class="method navigator-link" hash-for-method="outletListView(outletlistview, outletlistview_001, positive, Verify, post, {
+  &quot;user_id&quot;:136,
+&quot;app_source&quot;:&quot;admin_a...)">outletListView(outletlistview, outletlistview_001, positive, Verify, post, {
+  "user_id":136,
+"app_source":"admin_a...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
-                    </span>
-                    <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.menumitratCommonAPITestScript.OutletMultipleTestScript" class="method navigator-link" hash-for-method="outletMultipleTest(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  &quot;owner_ids&quot;: [136],
-  &quot;user_id&quot;: &quot;1&quot;...)">outletMultipleTest(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  "owner_ids": [136],
-  "user_id": "1"...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -138,58 +124,75 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.menumitratCommonAPITestScript.OutletMultipleTestScript</span>
+              <span class="class-name">com.menumitratCommonAPITestScript.OutletListViewTestScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createMultipleOutletsTest">
-                  </a> <!-- createMultipleOutletsTest -->
-                  <span class="method-name">createMultipleOutletsTest</span>
-                  <div class="stack-trace">com.menumitra.utilityclass.customException: Error in creating multiple outlets: Created 5 out of 20 outlets successfully - Some outlets failed to create
-	at com.menumitratCommonAPITestScript.OutletMultipleTestScript.createMultipleOutletsTest(OutletMultipleTestScript.java:318)
+                  <a name="outletListView(outletlistview, outletlistview_001, positive, Verify, post, {
+  &quot;user_id&quot;:136,
+&quot;app_source&quot;:&quot;admin_a...)">
+                  </a> <!-- outletListView(outletlistview, outletlistview_001, positive, Verify, post, {
+  "user_id":136,
+"app_source":"admin_a...) -->
+                  <span class="method-name">outletListView</span>
+                  <span class="parameters">(outletlistview, outletlistview_001, positive, Verify, post, {
+  "user_id":136,
+"app_source":"admin_app"
+}
+, {
+  "detail": "Successfully retrieved outlets",
+  "data": [
+    {
+      "outlet_id": 31,
+      "outlet_code": "557997",
+      "outlet_name": "Rajat Restaurant",
+      "mobile": "6264335750",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 96,
+      "outlet_code": "390450",
+      "outlet_name": "Rajat Restro",
+      "mobile": "8989898989",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 100,
+      "outlet_code": "880724",
+      "outlet_name": "Rajat Cake Shop",
+      "mobile": "8787878787",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 247,
+      "outlet_code": "705105",
+      "outlet_name": "Meat & More Square",
+      "mobile": "6127930001",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    }
+  ]
+}, 200)</span>
+                  <div class="stack-trace">com.menumitra.utilityclass.customException: Error in test case outletlistview_001: Error validating response: Error processing success response: Value mismatch for field &apos;data&apos;
+	at com.menumitratCommonAPITestScript.OutletListViewTestScript.outletListView(OutletListViewTestScript.java:182)
 ... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.menumitratCommonAPITestScript.OutletMultipleTestScript</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="outletMultipleTest(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  &quot;owner_ids&quot;: [136],
-  &quot;user_id&quot;: &quot;1&quot;...)">
-                  </a> <!-- outletMultipleTest(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  "owner_ids": [136],
-  "user_id": "1"...) -->
-                  <span class="method-name">outletMultipleTest</span>
-                  <span class="parameters">(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  "owner_ids": [136],
-  "user_id": "1",
-  "name": "xyz outlet cake",
-  "mobile": "7898789877",
-  "address": "pune",
-  "outlet_type": "hotel",
-  "outlet_mode": "online",
-  "veg_nonveg": "veg",
-  "upi_id":"aaaa@okhdfcbank",
-  "app_type":"pos"
-}, {
-  "detail": "Outlet created successfully with Section and 5 Tables",
-  "data": {
-    "image_url": null
-  }
-}, 200)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -203,7 +206,7 @@
   &lt;test name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.menumitra.superclass.APIBase&quot;/&gt;
-      &lt;class name=&quot;com.menumitratCommonAPITestScript.OutletMultipleTestScript&quot;/&gt;
+      &lt;class name=&quot;com.menumitratCommonAPITestScript.OutletListViewTestScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -243,20 +246,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createMultipleOutletsTest')
-data.setCell(0, 2, 'com.menumitratCommonAPITestScript.OutletMultipleTestScript')
-data.setCell(0, 3, 10611);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'outletMultipleTest')
-data.setCell(1, 2, 'com.menumitratCommonAPITestScript.OutletMultipleTestScript')
-data.setCell(1, 3, 97);
+data.setCell(0, 1, 'outletListView')
+data.setCell(0, 2, 'com.menumitratCommonAPITestScript.OutletListViewTestScript')
+data.setCell(0, 3, 164);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 164 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -275,7 +274,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.menumitratCommonAPITestScript.OutletMultipleTestScript</span>
+              <span class="ignored-class-name">com.menumitratCommonAPITestScript.OutletListViewTestScript</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setUp</span>
                 <br/>
@@ -296,29 +295,25 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.menumitratCommonAPITestScript.OutletMultipleTestScript</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.menumitratCommonAPITestScript.OutletListViewTestScript</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">outletMultipleSetUp</span>
-                <span class="method-start">249 ms</span>
+                <span class="method-name">setup</span>
+                <span class="method-start">174 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">createMultipleOutletsTest</span>
-                <span class="method-start">4083 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">outletMultipleTest(outletmultiple, outletmultiple_001, positive, Verify, post, {
-  "owner_ids": [136],
-  "user_id": "1"...)</span>
-                <span class="method-start">14896 ms</span>
+                <span class="method-name">outletListView(outletlistview, outletlistview_001, positive, Verify, post, {
+  "user_id":136,
+"app_source":"admin_a...)</span>
+                <span class="method-start">9238 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.menumitra.superclass.APIBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15538 ms</span>
+                <span class="method-start">9788 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

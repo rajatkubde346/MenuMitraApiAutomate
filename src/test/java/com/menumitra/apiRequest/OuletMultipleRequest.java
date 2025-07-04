@@ -12,6 +12,14 @@ public class OuletMultipleRequest {
     private String veg_nonveg;
     private String upi_id;
     private String app_type;
+    private String email;
+    private String gst_no;
+    private String pincode;
+    private String state;
+    private String city;
+    private String country;
+    private String latitude;
+    private String longitude;
 
     public int[] getOwner_ids() {
         return owner_ids;
@@ -91,5 +99,69 @@ public class OuletMultipleRequest {
 
     public void setApp_type(String app_type) {
         this.app_type = app_type;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGst_no() {
+        return gst_no;
+    }
+
+    public void setGst_no(String gst_no) {
+        this.gst_no = gst_no;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

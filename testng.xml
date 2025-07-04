@@ -192,9 +192,31 @@
 	    <class name="com.menumitratCommonAPITestScript.OrderPaymentSettleTestScript"/>-->
 	    
 	    <!--<class name="com.menumitratCommonAPITestScript.outletCreateTestScript"/>-->
-	    <class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript"/>
+	   <!--<class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript"/>-->
+	    
+	    <!--<class name="com.menumitratCommonAPITestScript.OutletMultiplesTestScripts"/>-->
+    <class name="com.menumitratCommonAPITestScript.OutletListViewTestScript"/>
+    
+    
+	
+		<!--<class name="com.menumitratCommonAPITestScript.DeleteMultipleOutletTestScripts"/>-->
+	<!--<class name="com.menumitratCommonAPITestScript.MultipleMenuCategoryCreateTestScript"/>-->
+	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+       
+	    
+	    
+	    
        
         
+        
+       
        
 	    
 	    

@@ -4,7 +4,7 @@
   <test name="Test">
     <classes>
       <class name="com.menumitra.superclass.APIBase"/>
-      <class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript"/>
+      <class name="com.menumitratCommonAPITestScript.OutletListViewTestScript"/>
     </classes>
   </test> <!-- Test -->
   <test name="Test(failed)">
@@ -15,12 +15,12 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.menumitra.superclass.APIBase -->
-      <class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript">
+      <class name="com.menumitratCommonAPITestScript.OutletListViewTestScript">
         <methods>
-          <include name="createMultipleOutletsTest"/>
-          <include name="outletMultipleSetUp"/>
+          <include name="setup"/>
+          <include name="outletListView" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.menumitratCommonAPITestScript.OutletMultipleTestScript -->
+      </class> <!-- com.menumitratCommonAPITestScript.OutletListViewTestScript -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

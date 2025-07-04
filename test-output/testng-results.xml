@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="1" failed="1" skipped="0">
+<testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-02T18:50:12Z" name="Suite" finished-at="2025-07-02T18:50:27Z" duration-ms="14935">
+  <suite started-at="2025-07-04T08:05:05Z" name="Suite" finished-at="2025-07-04T08:05:14Z" duration-ms="9371">
     <groups>
     </groups>
-    <test started-at="2025-07-02T18:50:12Z" name="Test" finished-at="2025-07-02T18:50:27Z" duration-ms="14935">
-      <class name="com.menumitratCommonAPITestScript.OutletMultipleTestScript">
-        <test-method is-config="true" signature="outletMultipleSetUp()[pri:0, instance:com.menumitratCommonAPITestScript.OutletMultipleTestScript@55b0dcab]" started-at="2025-07-03T00:20:13Z" name="outletMultipleSetUp" finished-at="2025-07-03T00:20:16Z" duration-ms="3828" status="PASS">
+    <test started-at="2025-07-04T08:05:05Z" name="Test" finished-at="2025-07-04T08:05:14Z" duration-ms="9371">
+      <class name="com.menumitra.superclass.APIBase">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.menumitra.superclass.APIBase@2925bf5b]" started-at="2025-07-04T13:35:05Z" name="setUp" finished-at="2025-07-04T13:35:05Z" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- outletMultipleSetUp -->
-        <test-method signature="createMultipleOutletsTest()[pri:0, instance:com.menumitratCommonAPITestScript.OutletMultipleTestScript@55b0dcab]" started-at="2025-07-03T00:20:16Z" name="createMultipleOutletsTest" finished-at="2025-07-03T00:20:27Z" duration-ms="10611" status="FAIL">
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.menumitra.superclass.APIBase@2925bf5b]" started-at="2025-07-04T13:35:15Z" name="tearDown" finished-at="2025-07-04T13:35:15Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.menumitra.superclass.APIBase -->
+      <class name="com.menumitratCommonAPITestScript.OutletListViewTestScript">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.menumitratCommonAPITestScript.OutletListViewTestScript@710f4dc7]" started-at="2025-07-04T13:35:05Z" name="setup" finished-at="2025-07-04T13:35:14Z" duration-ms="8849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="outletListView(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.menumitratCommonAPITestScript.OutletListViewTestScript@710f4dc7]" started-at="2025-07-04T13:35:14Z" name="outletListView" data-provider="getOutletListViewData" finished-at="2025-07-04T13:35:14Z" duration-ms="164" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[outletlistview]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outletlistview_001]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[positive]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Verify]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[post]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[{
+  "user_id":136,
+"app_source":"admin_app"
+}
+]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[{
+  "detail": "Successfully retrieved outlets",
+  "data": [
+    {
+      "outlet_id": 31,
+      "outlet_code": "557997",
+      "outlet_name": "Rajat Restaurant",
+      "mobile": "6264335750",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 96,
+      "outlet_code": "390450",
+      "outlet_name": "Rajat Restro",
+      "mobile": "8989898989",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 100,
+      "outlet_code": "880724",
+      "outlet_name": "Rajat Cake Shop",
+      "mobile": "8787878787",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    },
+    {
+      "outlet_id": 247,
+      "outlet_code": "705105",
+      "outlet_name": "Meat & More Square",
+      "mobile": "6127930001",
+      "outlet_status": 1,
+      "is_open": 1,
+      "account_type": "test",
+      "owner_count": 1
+    }
+  ]
+}]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+          </params>
           <exception class="com.menumitra.utilityclass.customException">
             <message>
-              <![CDATA[Error in creating multiple outlets: Created 5 out of 20 outlets successfully - Some outlets failed to create]]>
+              <![CDATA[Error in test case outletlistview_001: Error validating response: Error processing success response: Value mismatch for field 'data']]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.menumitra.utilityclass.customException: Error in creating multiple outlets: Created 5 out of 20 outlets successfully - Some outlets failed to create
-	at com.menumitratCommonAPITestScript.OutletMultipleTestScript.createMultipleOutletsTest(OutletMultipleTestScript.java:318)
+              <![CDATA[com.menumitra.utilityclass.customException: Error in test case outletlistview_001: Error validating response: Error processing success response: Value mismatch for field 'data'
+	at com.menumitratCommonAPITestScript.OutletListViewTestScript.outletListView(OutletListViewTestScript.java:182)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
@@ -46,80 +146,8 @@
           </exception> <!-- com.menumitra.utilityclass.customException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createMultipleOutletsTest -->
-        <test-method signature="outletMultipleTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.menumitratCommonAPITestScript.OutletMultipleTestScript@55b0dcab]" started-at="2025-07-03T00:20:27Z" name="outletMultipleTest" data-provider="getOutletMultipleData" finished-at="2025-07-03T00:20:27Z" duration-ms="97" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[outletmultiple]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[outletmultiple_001]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[positive]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Verify]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[post]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[{
-  "owner_ids": [136],
-  "user_id": "1",
-  "name": "xyz outlet cake",
-  "mobile": "7898789877",
-  "address": "pune",
-  "outlet_type": "hotel",
-  "outlet_mode": "online",
-  "veg_nonveg": "veg",
-  "upi_id":"aaaa@okhdfcbank",
-  "app_type":"pos"
-}]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[{
-  "detail": "Outlet created successfully with Section and 5 Tables",
-  "data": {
-    "image_url": null
-  }
-}]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- outletMultipleTest -->
-      </class> <!-- com.menumitratCommonAPITestScript.OutletMultipleTestScript -->
-      <class name="com.menumitra.superclass.APIBase">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.menumitra.superclass.APIBase@131ef10]" started-at="2025-07-03T00:20:12Z" name="setUp" finished-at="2025-07-03T00:20:12Z" duration-ms="63" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.menumitra.superclass.APIBase@131ef10]" started-at="2025-07-03T00:20:28Z" name="tearDown" finished-at="2025-07-03T00:20:28Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.menumitra.superclass.APIBase -->
+        </test-method> <!-- outletListView -->
+      </class> <!-- com.menumitratCommonAPITestScript.OutletListViewTestScript -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

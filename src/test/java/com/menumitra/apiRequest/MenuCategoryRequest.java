@@ -7,6 +7,7 @@ public class MenuCategoryRequest {
     private String categoryName;
     private File image;
     private String userId;
+    private String appSource;
 
     // Constructor
     public MenuCategoryRequest(int outletId, String categoryName, String userId) {
@@ -48,6 +49,14 @@ public class MenuCategoryRequest {
         this.userId = userId;
     }
 
+    public String getAppSource() {
+        return appSource;
+    }
+
+    public void setAppSource(String appSource) {
+        this.appSource = appSource;
+    }
+
     // Builder pattern for optional image
     public MenuCategoryRequest withImage(File image) {
         this.image = image;
@@ -59,5 +68,22 @@ public class MenuCategoryRequest {
             this.image = new File(imagePath);
         }
         return this;
+    }
+
+    // Example usage with the provided JSON data
+    public static void main(String[] args) {
+        // Create instance with required fields
+        MenuCategoryRequest request = new MenuCategoryRequest(96, "chicken", "136");
+        
+        // Set optional fields
+        request.withImage("url");
+        request.setAppSource("owner_app");
+        
+        // Verify the values using getters
+        System.out.println("Outlet ID: " + request.getOutletId());
+        System.out.println("Category Name: " + request.getCategoryName());
+        System.out.println("User ID: " + request.getUserId());
+        System.out.println("Image: " + request.getImage());
+        System.out.println("App Source: " + request.getAppSource());
     }
 }

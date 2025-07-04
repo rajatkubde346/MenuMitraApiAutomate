@@ -9,6 +9,7 @@ import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.bson.types.Symbol;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -216,18 +217,44 @@ public class MenuCreateTestScript extends APIBase {
             request.header("Authorization", "Bearer " + accessToken);
             request.contentType("multipart/form-data");
             		
-            if(requestBodyJson.has("images") && !requestBodyJson.getString("images").isEmpty()) {
+            if(requestBodyJson.has("images")) {
                 LogUtils.info("Processing image attachments");
-                File imageFile = new File(requestBodyJson.getString("images"));
-                if(imageFile.exists()) {
-                    for(int i=0; i<5; i++) {
-                        request.multiPart("images", imageFile);
+                if (requestBodyJson.get("images") instanceof JSONArray) {
+                    JSONArray imagesArray = requestBodyJson.getJSONArray("images");
+                    for (int i = 0; i < imagesArray.length(); i++) {
+                        String imageData = imagesArray.getString(i);
+                        if(imageData.startsWith("data:image")) {
+                            request.multiPart("images", "image" + i + ".png", imageData.getBytes());
+                            LogUtils.info("Successfully attached base64 image data");
+                        } else {
+                            File imageFile = new File(imageData);
+                            if(imageFile.exists()) {
+                                request.multiPart("images", imageFile);
+                                LogUtils.info("Successfully attached image file: " + imageData);
+                            } else {
+                                LogUtils.warn("Image file not found at path: " + imageData);
+                            }
+                        }
                     }
-                    LogUtils.info("Successfully attached 5 image files");
-                    ExtentReport.getTest().log(Status.INFO, "Successfully attached 5 image files");
-                } else {
-                    LogUtils.warn("Image file not found at path: " + requestBodyJson.getString("images"));
-                    ExtentReport.getTest().log(Status.WARNING, "Image file not found at specified path");
+                    ExtentReport.getTest().log(Status.INFO, "Successfully processed image attachments");
+                } else if (!requestBodyJson.getString("images").isEmpty()) {
+                    String imageData = requestBodyJson.getString("images");
+                    if(imageData.startsWith("data:image")) {
+                        for(int i=0; i<5; i++) {
+                            request.multiPart("images", "image" + i + ".png", imageData.getBytes());
+                        }
+                        LogUtils.info("Successfully attached 5 copies of base64 image data");
+                    } else {
+                        File imageFile = new File(imageData);
+                        if(imageFile.exists()) {
+                            for(int i=0; i<5; i++) {
+                                request.multiPart("images", imageFile);
+                            }
+                            LogUtils.info("Successfully attached 5 copies of image file");
+                        } else {
+                            LogUtils.warn("Image file not found at path: " + imageData);
+                        }
+                    }
                 }
             }
 
@@ -242,7 +269,12 @@ public class MenuCreateTestScript extends APIBase {
                 request.multiPart("food_type", requestBodyJson.getString("food_type"));
                 request.multiPart("description", requestBodyJson.getString("description"));
                 request.multiPart("spicy_index", requestBodyJson.getString("spicy_index"));
-                request.multiPart("portion_data", requestBodyJson.getJSONArray("portion_data").toString());
+                // Handle portion_data - parse it if it's a string
+                if (requestBodyJson.get("portion_data") instanceof String) {
+                    request.multiPart("portion_data", requestBodyJson.getString("portion_data"));
+                } else {
+                    request.multiPart("portion_data", requestBodyJson.getJSONArray("portion_data").toString());
+                }
                 request.multiPart("ingredients", requestBodyJson.getString("ingredients"));
                 request.multiPart("offer", requestBodyJson.getString("offer"));
                 request.multiPart("rating", requestBodyJson.getString("rating")); 
@@ -280,6 +312,122 @@ public class MenuCreateTestScript extends APIBase {
             ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Test execution failed", ExtentColor.RED));
             ExtentReport.getTest().log(Status.FAIL, "Error details: " + e.getMessage());
             throw new customException("Error during menu creation test execution: " + e.getMessage());
+        }
+    }
+
+    @Test(dependsOnMethods = "createMenuUsigValidInputData")
+    private void createBulkMenus() throws customException {
+        try {
+            LogUtils.info("Starting bulk menu creation test case");
+            ExtentReport.createTest("Bulk Menu Creation Test - Creating 500 Menus");
+            ExtentReport.getTest().log(Status.INFO, "Test Description: Creating 500 menus with unique names");
+
+            // Get base request body from the first test case
+            Object[][] testData = getMenuCreateData();
+            String requestBodyPayload = testData[0][5].toString(); // Get the first test case request body
+            JSONObject baseRequestBody = new JSONObject(requestBodyPayload.replace("\\\\", "\\"));
+
+            for (int i = 1; i <= 5; i++) {
+                try {
+                    LogUtils.info("Creating menu #" + i);
+                    
+                    // Create a copy of base request body for this iteration
+                    JSONObject currentRequestBody = new JSONObject(baseRequestBody.toString());
+                    
+                    // Modify the name to make it unique
+                    String uniqueName = currentRequestBody.getString("name") + "_" + i;
+                    
+                    request = RestAssured.given();
+                    request.header("Authorization", "Bearer " + accessToken);
+                    request.contentType("multipart/form-data");
+
+                    // Handle images if present
+                    if(currentRequestBody.has("images")) {
+                        if (currentRequestBody.get("images") instanceof JSONArray) {
+                            JSONArray imagesArray = currentRequestBody.getJSONArray("images");
+                            for (int j = 0; j < imagesArray.length(); j++) {
+                                String imageData = imagesArray.getString(j);
+                                if(imageData.startsWith("data:image")) {
+                                    request.multiPart("images", "image" + j + ".png", imageData.getBytes());
+                                    LogUtils.info("Successfully attached base64 image data");
+                                } else {
+                                    File imageFile = new File(imageData);
+                                    if(imageFile.exists()) {
+                                        request.multiPart("images", imageFile);
+                                        LogUtils.info("Successfully attached image file: " + imageData);
+                                    } else {
+                                        LogUtils.warn("Image file not found at path: " + imageData);
+                                    }
+                                }
+                            }
+                        } else if (!currentRequestBody.getString("images").isEmpty()) {
+                            String imageData = currentRequestBody.getString("images");
+                            if(imageData.startsWith("data:image")) {
+                                for(int j=0; j<5; j++) {
+                                    request.multiPart("images", "image" + j + ".png", imageData.getBytes());
+                                }
+                                LogUtils.info("Successfully attached 5 copies of base64 image data");
+                            } else {
+                                File imageFile = new File(imageData);
+                                if(imageFile.exists()) {
+                                    for(int j=0; j<5; j++) {
+                                        request.multiPart("images", imageFile);
+                                    }
+                                    LogUtils.info("Successfully attached 5 copies of image file");
+                                } else {
+                                    LogUtils.warn("Image file not found at path: " + imageData);
+                                }
+                            }
+                        }
+                    }
+
+                    // Set form parameters
+                    request.multiPart("user_id", userId);
+                    request.multiPart("outlet_id", currentRequestBody.getString("outlet_id")); 
+                    request.multiPart("menu_cat_id", currentRequestBody.getString("menu_cat_id"));
+                    request.multiPart("name", uniqueName); // Use unique name
+                    request.multiPart("food_type", currentRequestBody.getString("food_type"));
+                    request.multiPart("description", currentRequestBody.getString("description"));
+                    request.multiPart("spicy_index", currentRequestBody.getString("spicy_index"));
+                    // Handle portion_data - parse it if it's a string
+                    if (currentRequestBody.get("portion_data") instanceof String) {
+                        request.multiPart("portion_data", currentRequestBody.getString("portion_data"));
+                    } else {
+                        request.multiPart("portion_data", currentRequestBody.getJSONArray("portion_data").toString());
+                    }
+                    request.multiPart("ingredients", currentRequestBody.getString("ingredients"));
+                    request.multiPart("offer", currentRequestBody.getString("offer"));
+                    request.multiPart("rating", currentRequestBody.getString("rating")); 
+                    request.multiPart("cgst", currentRequestBody.getString("cgst"));
+                    request.multiPart("sgst", currentRequestBody.getString("sgst"));
+
+                    // Send request
+                    response = request.when().post(baseUri).then().extract().response();
+                    
+                    if(response.getStatusCode() == 200) {
+                        LogUtils.success(logger, "Menu #" + i + " created successfully");
+                    } else {
+                        LogUtils.error("Failed to create menu #" + i + ". Status code: " + response.getStatusCode());
+                        LogUtils.error("Response: " + response.asPrettyString());
+                    }
+
+                    // Add a small delay to prevent overwhelming the server
+                    Thread.sleep(100);
+
+                } catch (Exception e) {
+                    LogUtils.error("Error creating menu #" + i + ": " + e.getMessage());
+                    // Continue with next menu even if current one fails
+                    continue;
+                }
+            }
+
+            ExtentReport.getTest().log(Status.PASS, MarkupHelper.createLabel("Bulk menu creation completed", ExtentColor.GREEN));
+
+        } catch (Exception e) {
+            LogUtils.error("Error during bulk menu creation: " + e.getMessage());
+            ExtentReport.getTest().log(Status.FAIL, MarkupHelper.createLabel("Bulk menu creation failed", ExtentColor.RED));
+            ExtentReport.getTest().log(Status.FAIL, "Error details: " + e.getMessage());
+            throw new customException("Error during bulk menu creation: " + e.getMessage());
         }
     }
 
